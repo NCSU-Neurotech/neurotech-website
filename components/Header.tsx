@@ -16,6 +16,9 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
   const projects = [
     { id: "arduino-switch", name: "Arduino Communication Switch" },
     { id: "eeg-headset", name: "EEG Headset" },
+    { id: "epilepsy-decoder", name: "Epilepsy Decoder" },
+    { id: "eeg-decoder", name: "EEG Movement Decoder" },
+    { id: "neural-3d-model", name: "Neural-Driven 3D Model" },
   ];
 
   // Close dropdowns when clicking outside

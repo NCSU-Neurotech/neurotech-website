@@ -103,6 +103,111 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
         },
       ],
     },
+    "epilepsy-decoder": {
+      title: "Epilepsy / Seizure State Decoder",
+      status: "Completed",
+      description:
+        "In an effort to explore the intersection of deep learning and neural signals, we applied neural networks to the classification of seizure states. Using the Bonn EEG dataset, we transformed raw signals into usable segments, extracted features, and trained models ranging from a feedforward ANN (95.25% accuracy) to time series architectures including RNNs, LSTMs, GRUs, and related approaches.",
+      image:
+        "https://www.neurocenternj.com/wp-content/uploads/2021/01/purple-brain-scans-epilepsy-800x400.jpg",
+      started: "January 2026",
+      team: "3 members",
+      overview:
+        "Work used the public Bonn EEG dataset at https://www.kaggle.com/datasets/quands/eeg-dataset. The project ran from January through February 2026 and is complete: preprocessing and segmentation, feature design, baseline ANN performance, and structured exploration of recurrent and sequence models for seizure vs. non-seizure discrimination.",
+      goals: [
+        "Preprocess Bonn EEG recordings into consistent analysis segments",
+        "Engineer features suitable for both feedforward and sequence models",
+        "Establish a strong ANN baseline and report validation accuracy",
+        "Compare RNN, LSTM, GRU, and related time series architectures",
+        "Document methodology and results for the club and future work",
+      ],
+      updates: [
+        {
+          date: "January 2026",
+          title: "Kickoff, Bonn dataset, and segmentation",
+          description:
+            "Project started: acquired the Bonn EEG dataset, defined train/validation splits, implemented signal segmentation, and normalized segments for downstream feature extraction and modeling.",
+          status: "completed",
+        },
+        {
+          date: "January 2026",
+          title: "Feature extraction and ANN baseline",
+          description:
+            "Extracted features from segments, trained a feedforward ANN for seizure-state classification, and reached 95.25% accuracy on the chosen validation setup.",
+          status: "completed",
+        },
+        {
+          date: "February 2026",
+          title: "Time series models: RNN, LSTM, GRU",
+          description:
+            "Extended the pipeline to sequence-focused architectures—including RNNs, LSTMs, and GRUs—and compared them to the ANN baseline. Final documentation and wrap-up completed this phase.",
+          status: "completed",
+        },
+        {
+          date: "February 2026",
+          title: "Project completed",
+          description:
+            "All planned modeling milestones finished; results and methodology consolidated. Further optional experiments remain possible as follow-up research but are outside the original scope.",
+          status: "completed",
+        },
+      ],
+    },
+    "eeg-decoder": {
+      title: "EEG Movement Decoder",
+      status: "Planning",
+      description:
+        "A future project to decode EEG (or related neural signals) into estimates of physical movements—closing the loop between brain activity and motor intent for assistive or research applications.",
+      image:
+        "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1080&q=80&auto=format&fit=crop",
+      started: "Not started",
+      team: "TBD",
+      overview:
+        "This effort has not started; it is in the planning stage. The objective is to map patterns in brain signals to concrete movements or movement classes (e.g., for prosthetics, avatars, or rehabilitation tools). Next steps include defining hardware and dataset requirements, ethical review where needed, and a minimal proof-of-concept before full development.",
+      goals: [
+        "Specify which movements or motor outputs the system should target",
+        "Choose acquisition hardware and synchronization with motion labels",
+        "Design a decoding approach (classification, regression, or generative mapping)",
+        "Plan evaluation metrics and safety considerations",
+        "Staff the team and secure time and resources to begin implementation",
+      ],
+      updates: [
+        {
+          date: "March 2026",
+          title: "Planning phase (not started)",
+          description:
+            "Requirements and scope are under discussion; no data collection or model training has begun. Updates will appear here once the project moves into active development.",
+          status: "in-progress",
+        },
+      ],
+    },
+    "neural-3d-model": {
+      title: "Neural-Driven 3D Model",
+      status: "Planning",
+      description:
+        "An initiative to animate a 3D model—such as an avatar or abstract figure—so that its motion reflects live or recorded neural input, making brain activity tangible for demos, therapy contexts, or outreach.",
+      image:
+        "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1080&q=80&auto=format&fit=crop",
+      started: "Not started",
+      team: "TBD",
+      overview:
+        "This project is in early planning. The vision is to pair a real-time or near–real-time neural signal stream with a 3D scene (e.g., via a game engine or WebGL) so that features derived from the signal drive pose, expression, or motion parameters. Partnership with the EEG headset or decoder projects may reduce duplicate work.",
+      goals: [
+        "Pick a 3D stack (e.g., Blender pipeline, Unity, WebGL, or Three.js)",
+        "Define which neural features map to which animation parameters",
+        "Prototype low-latency streaming from signals to the renderer",
+        "Build a simple demo rig (single avatar or abstract visualization)",
+        "Document setup for artists and engineers joining later",
+      ],
+      updates: [
+        {
+          date: "March 2026",
+          title: "Concept and stack exploration",
+          description:
+            "Exploring tooling options and how this project connects to existing EEG and decoding work. Implementation has not started.",
+          status: "in-progress",
+        },
+      ],
+    },
   };
 
   const project = projects[projectId];

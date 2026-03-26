@@ -183,15 +183,25 @@ export function Contact() {
 
             <div className="rounded-lg border bg-primary text-primary-foreground shadow-sm">
               <div className="p-6">
-                <h4 className="mb-3 text-white">Office Hours</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-white/90">Monday - Friday</span>
-                    <span className="text-white">9AM - 5PM</span>
+                <h4 className="mb-3 text-white">Meeting Hours</h4>
+                <div className="space-y-4 text-sm">
+                  <div>
+                    <div className="flex justify-between gap-2">
+                      <span className="text-white/90">Wednesday</span>
+                      <span className="shrink-0 text-white">7PM – 9PM</span>
+                    </div>
+                    <p className="mt-1 text-white/85">
+                      Engineering Building 3, Room 2236 · Centennial Campus, NC State
+                    </p>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-white/90">Saturday - Sunday</span>
-                    <span className="text-white">Closed</span>
+                  <div>
+                    <div className="flex justify-between gap-2">
+                      <span className="text-white/90">Friday</span>
+                      <span className="shrink-0 text-white">4PM – 6PM</span>
+                    </div>
+                    <p className="mt-1 text-white/85">
+                      Engineering Building 2, Room 1227 · Centennial Campus, NC State
+                    </p>
                   </div>
                 </div>
               </div>

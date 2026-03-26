@@ -9,6 +9,7 @@ import { Contact } from "./components/Contact";
 import { Donate } from "./components/Donate";
 import { Donors } from "./components/Donors";
 import { MeetTheTeam } from "./components/MeetTheTeam";
+import { ClubMeetings } from "./components/ClubMeetings";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -41,6 +42,7 @@ export default function App() {
         return (
           <>
             <Hero onNavigate={handleNavigate} />
+            <ClubMeetings />
           </>
         );
       case "about":
@@ -66,6 +68,30 @@ export default function App() {
           projectId="eeg-headset" 
           onNavigate={handleNavigate} />
         );
+      case "project-epilepsy-decoder":
+        return (
+          <ProjectDetail
+            key="epilepsy-decoder"
+            projectId="epilepsy-decoder"
+            onNavigate={handleNavigate}
+          />
+        );
+      case "project-eeg-decoder":
+        return (
+          <ProjectDetail
+            key="eeg-decoder"
+            projectId="eeg-decoder"
+            onNavigate={handleNavigate}
+          />
+        );
+      case "project-neural-3d-model":
+        return (
+          <ProjectDetail
+            key="neural-3d-model"
+            projectId="neural-3d-model"
+            onNavigate={handleNavigate}
+          />
+        );
       case "contact":
         return <Contact />;
       case "donate":
@@ -76,6 +102,7 @@ export default function App() {
         return (
           <>
             <Hero onNavigate={handleNavigate} />
+            <ClubMeetings />
           </>
         );
     }

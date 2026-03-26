@@ -27,6 +27,39 @@ export function Projects({ onNavigate }: ProjectsProps) {
       team: "8 members",
       started: "November 2025",
     },
+    {
+      id: "epilepsy-decoder",
+      title: "Epilepsy / Seizure State Decoder",
+      description:
+        "Deep learning classification of seizure states from EEG using the Bonn dataset—segmentation, feature extraction, and models from ANNs through RNNs, LSTMs, and GRUs.",
+      image:
+        "https://www.neurocenternj.com/wp-content/uploads/2021/01/purple-brain-scans-epilepsy-800x400.jpg",
+      status: "Completed",
+      team: "3 members",
+      started: "January 2026",
+    },
+    {
+      id: "eeg-decoder",
+      title: "EEG Movement Decoder",
+      description:
+        "A planned project to map brain signals to specific physical movements—currently in the planning stage and not yet started.",
+      image:
+        "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1080&q=80&auto=format&fit=crop",
+      status: "Planning",
+      team: "TBD",
+      started: "TBD",
+    },
+    {
+      id: "neural-3d-model",
+      title: "Neural-Driven 3D Model",
+      description:
+        "An initiative to drive a 3D avatar or scene from live neural input so movement in the model reflects the user’s brain activity—in planning.",
+      image:
+        "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1080&q=80&auto=format&fit=crop",
+      status: "Planning",
+      team: "TBD",
+      started: "TBD",
+    },
   ];
 
   return (
