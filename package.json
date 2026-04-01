@@ -10,7 +10,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-navigation-menu": "^1.2.1",
@@ -50,5 +52,5 @@
   "bugs": {
     "url": "https://github.com/NCSUNeurotech/neurotech-website/issues"
   },
-  "homepage": "https://github.com/NCSUNeurotech/neurotech-website#readme"
+  "homepage": "https://github.com/NCSUNeurotech/neurotech-website"
 }
