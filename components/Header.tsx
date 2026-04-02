@@ -130,6 +130,18 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               Mission
             </button>
 
+            <button
+              onClick={() => onNavigate("collaborations")}
+              className={`text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
+                currentPage === "collaborations" ||
+                currentPage.startsWith("collaboration-")
+                  ? "text-black bg-gray-200/20"
+                  : ""
+              }`}
+            >
+              Collaborations
+            </button>
+
             {/* Projects Dropdown */}
             <div 
               className="relative dropdown-container" 
@@ -295,6 +307,16 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                 className="text-left text-white hover:text-black transition-colors"
               >
                 Mission
+              </button>
+
+              <button
+                onClick={() => {
+                  onNavigate("collaborations");
+                  setMobileMenuOpen(false);
+                }}
+                className="text-left text-white hover:text-black transition-colors"
+              >
+                Collaborations
               </button>
               
               <div>
