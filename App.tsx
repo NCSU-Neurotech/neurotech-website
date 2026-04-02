@@ -10,6 +10,9 @@ import { Donate } from "./components/Donate";
 import { Donors } from "./components/Donors";
 import { MeetTheTeam } from "./components/MeetTheTeam";
 import { ClubMeetings } from "./components/ClubMeetings";
+import { Collaborations } from "./components/Collaborations";
+import { CollaborationDetail } from "./components/CollaborationDetail";
+import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -41,6 +44,7 @@ export default function App() {
       case "home":
         return (
           <>
+            <GtecHackathonBanner onNavigate={handleNavigate} />
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -51,6 +55,40 @@ export default function App() {
         return <MeetTheTeam />;
       case "mission":
         return <Mission />;
+      case "collaborations":
+        return <Collaborations onNavigate={handleNavigate} />;
+      case "collaboration-ant-neuro":
+        return (
+          <CollaborationDetail
+            key="ant-neuro"
+            collaborationId="ant-neuro"
+            onNavigate={handleNavigate}
+          />
+        );
+      case "collaboration-g-tec-hackathon":
+        return (
+          <CollaborationDetail
+            key="g-tec-hackathon"
+            collaborationId="g-tec-hackathon"
+            onNavigate={handleNavigate}
+          />
+        );
+      case "collaboration-neuropawn":
+        return (
+          <CollaborationDetail
+            key="neuropawn"
+            collaborationId="neuropawn"
+            onNavigate={handleNavigate}
+          />
+        );
+      case "collaboration-idun":
+        return (
+          <CollaborationDetail
+            key="idun"
+            collaborationId="idun"
+            onNavigate={handleNavigate}
+          />
+        );
       case "projects":
         return <Projects onNavigate={handleNavigate} />;
       case "project-arduino-switch":
@@ -101,6 +139,7 @@ export default function App() {
       default:
         return (
           <>
+            <GtecHackathonBanner onNavigate={handleNavigate} />
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -136,6 +175,12 @@ export default function App() {
                   className="text-left text-white/80 hover:text-white transition-colors"
                 >
                   Projects
+                </button>
+                <button
+                  onClick={() => handleNavigate("collaborations")}
+                  className="text-left text-white/80 hover:text-white transition-colors"
+                >
+                  Collaborations
                 </button>
                 <button
                   onClick={() => handleNavigate("contact")}
