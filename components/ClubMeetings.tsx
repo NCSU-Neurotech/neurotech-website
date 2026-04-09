@@ -3,9 +3,7 @@ import {
   CalendarClock,
   Mail,
   Newspaper,
-  PartyPopper,
   Rocket,
-  UtensilsCrossed,
 } from "lucide-react";
 
 const MEETING_SLOTS = [
@@ -26,26 +24,21 @@ const MEETING_SLOTS = [
 const CLUB_FLOW = [
   {
     icon: Newspaper,
-    title: "Neurotech in the news",
+    title: "Neurotech Snippets",
     description:
-      "We open with a quick slideshow: breakthrough papers, wild demos, and the stories that are reshaping brain–computer interfaces and neurotech.",
+      "We start with a quick introductory slideshow each week with news on recent neurotech breakthroughs, cool project updates, and club announcements.",
   },
-  {
-    icon: UtensilsCrossed,
-    title: "Fuel for the night",
-    description:
-      "Bring your ideas—we’ll often have snacks or food when we can. It’s low-key, friendly, and a great way to debrief before we dive in.",
-  },
+
   {
     icon: Rocket,
-    title: "Build time",
+    title: "Project Work Time",
     description:
-      "The rest of the meeting is for project work: wiring, prototyping, software, research, and whatever your team needs to move forward.",
+      "We spend most of our meeting time working on team projects. We have Software, Hardware, and Outreach teams, so there’s a place for everyone to contribute.",
   },
 ] as const;
 
 const mailingListHref =
-  "mailto:neurotech-org@ncsu.edu?subject=Join%20the%20Neurotech%20mailing%20list&body=Hi!%20Please%20add%20me%20to%20the%20club%20mailing%20list.%0A%0AMy%20name%3A%20%0AMy%20NCSU%20email%20(if%20applicable)%3A%20%0A";
+  "https://docs.google.com/forms/d/e/1FAIpQLScnaXyUwomTewNEz4ICqiH-6BddPI9zJFx6KPWanWD3fPyiTg/viewform?usp=dialog";
 
 export function ClubMeetings() {
   return (
@@ -59,23 +52,23 @@ export function ClubMeetings() {
             <Brain className="h-4 w-4" aria-hidden />
             USE YOUR BRAIN
           </div>
-          <h2 className="mb-4 text-3xl md:text-4xl">Meetings that build connections (neural connections :D)</h2>
+          <h2 className="mb-4 text-3xl md:text-4xl">Meetings that Build Connections</h2>
           <div className="mx-auto mb-6 h-1 w-24 bg-primary" />
           <p className="text-lg text-muted-foreground">
-            We’re a neurotech community at NC State—curious, experimental, and genuinely fun. Show up as you
-            are: no gatekeeping, just good people working on hard problems together.
+            We're a community here at NC State. Everyone is welcome regardless of experience, and our meetings are designed to be
+            a place to learn, collaborate, and have fun.
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
-          <div className="rounded-xl border bg-card p-6 shadow-sm md:row-span-2 md:flex md:flex-col md:justify-center">
+        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 md:items-center">
+          <div className="rounded-xl border bg-card p-6 shadow-sm md:flex md:flex-col md:justify-center">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <CalendarClock className="h-6 w-6" aria-hidden />
               </div>
               <div>
-                <h3 className="text-xl">When we meet</h3>
-                <p className="text-sm text-muted-foreground">Drop in for either session—or both!</p>
+                <h3 className="text-xl">Meeting Times</h3>
+                <p className="text-sm text-muted-foreground"></p>
               </div>
             </div>
             <ul className="space-y-4">
@@ -94,7 +87,7 @@ export function ClubMeetings() {
               ))}
             </ul>
             <p className="mt-4 text-sm text-muted-foreground">
-              Last-minute room or schedule changes go out on the mailing list—sign up so you never miss a week.
+             
             </p>
           </div>
 
@@ -117,13 +110,14 @@ export function ClubMeetings() {
         </div>
 
         <div className="mx-auto mt-12 max-w-2xl rounded-xl border-2 border-primary/30 bg-primary/5 p-8 text-center">
-          <h3 className="mb-2 text-xl">Get on the mailing list</h3>
+          <h3 className="mb-2 text-xl">Join the Mailing List</h3>
           <p className="mb-6 text-muted-foreground">
-            One email gets you meeting reminders, room changes, event invites, and the occasional “you have
-            to see this” neurotech link from someone on the team.
+            Sign up for meeting reminders, project updates, and all the latest news from the club.
           </p>
           <a
             href={mailingListHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           >
             <Mail className="h-4 w-4" aria-hidden />

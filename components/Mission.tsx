@@ -43,7 +43,7 @@ export function Mission() {
           </div>
           <div className="mx-auto h-1 w-24 bg-primary mb-6"></div>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-            To empower children with severe mental and physical disabilities by developing 
+            Grow neurotech in RTP and empower children with severe mental and physical disabilities by developing 
             innovative assistive communication technology that bridges the gap between them 
             and their caretakers, enabling meaningful connections and improved quality of life.
           </p>
@@ -57,18 +57,18 @@ export function Mission() {
                 <p className="mb-4 text-muted-foreground">
                   Every child deserves the ability to communicate. For children with severe disabilities, 
                   expressing basic needs, emotions, or discomfort can be an insurmountable challenge. 
-                  This communication barrier doesn't just affect the child—it impacts families, caregivers, 
+                  This communication barrier doesn't just affect the child, it impacts families, caregivers, 
                   educators, and healthcare providers.
                 </p>
                 <p className="mb-4 text-muted-foreground">
                   At Neurotech at NC State, we believe that technology can break down these barriers. 
                   Our current focus is on developing specialized Arduino-based switch systems that 
                   children can activate to trigger commands, enabling them to communicate their needs 
-                  effectively and independently.
+                  effectively and independently. 
                 </p>
                 <p className="text-muted-foreground">
-                  We're not just building devices—we're building bridges to understanding, independence, 
-                  and dignity for some of the most vulnerable members of our community through education and technology.
+                  By expanding our outreach and encouraging neuro education in the Triangle, we hope to create a community
+                  that is passionate about using technology to make a real difference in the lives of these children and their families.
                 </p>
               </div>
             </div>

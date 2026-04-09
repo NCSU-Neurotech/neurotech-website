@@ -4,11 +4,8 @@ import {
   Building2,
   HeartHandshake,
   Users,
-  CalendarDays,
-  Presentation,
-  Package,
-  ArrowRight,
 } from "lucide-react";
+import { Image } from "./Image";
 
 interface CollaborationsProps {
   onNavigate: (page: string) => void;
@@ -38,42 +35,38 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
       icon: Users,
       title: "Student organizations",
       description:
-        "We love working with other clubs and chapters on campus—joint workshops, hackathons, and awareness campaigns that grow the neurotech and accessibility community at NC State.",
+        "We love working with other clubs and chapters on join workshops, hackathons, and awareness campaigns that grow the neurotech and accessibility community at NC State.",
     },
   ];
 
   const highlights = [
     {
-      page: "collaboration-ant-neuro",
-      icon: Presentation,
       title: "ANT Neuro",
-      meta: "April 1, 2026",
-      description:
-        "ANT Neuro joined us for a hands-on demo, showcasing over $50,000 worth of EEG hardware and giving our members a close look at professional-grade neuroimaging equipment.",
+      logo: {
+        src: "/images/collaborations/ant-logo.webp",
+        alt: "ANT Neuro logo",
+      },
     },
     {
-      page: "collaboration-g-tec-hackathon",
-      icon: CalendarDays,
       title: "g.tec Hackathon",
-      meta: "April 25–26, 2026",
-      description:
-        "We are hosting a hackathon in partnership with g.tec. Save the date for a weekend of building, learning, and collaboration.",
+      logo: {
+        src: "/images/collaborations/g-tec-logo.svg",
+        alt: "g.tec logo",
+      },
     },
     {
-      page: "collaboration-neuropawn",
-      icon: Package,
       title: "Neuropawn",
-      meta: "Hardware support",
-      description:
-        "We have received hardware from Neuropawn to support our projects and experiments—thank you for helping power our lab work.",
+      logo: {
+        src: "/images/collaborations/neuropawn-logo.png",
+        alt: "Neuropawn logo",
+      },
     },
     {
-      page: "collaboration-idun",
-      icon: Package,
       title: "IDUN",
-      meta: "Hardware support",
-      description:
-        "IDUN Technologies has provided hardware to support our lab work and brain-sensing projects—thank you for helping us build and experiment.",
+      logo: {
+        src: "/images/collaborations/idun-logo.png", // update path as needed
+        alt: "IDUN Technologies logo",
+      },
     },
   ];
 
@@ -89,39 +82,26 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
           <h2 className="mb-4 text-3xl md:text-4xl">Collaborations</h2>
           <div className="mx-auto h-1 w-24 bg-primary mb-6"></div>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-            Meaningful assistive technology takes a village. We partner with researchers,
-            companies, community groups, and fellow students to design, build, and deploy
-            solutions that improve communication and quality of life.
+            We partner with researchers,
+            companies, community groups, and fellow students to spread neurotech education
+            and develop impactful solutions.
           </p>
         </div>
 
         <div className="mb-16">
-          <h3 className="mb-8 text-center">Partners & highlights</h3>
+          <h3 className="mb-8 text-center">Partners & Sponsors</h3>
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {highlights.map((item) => (
-              <button
-                key={item.page}
-                type="button"
-                onClick={() => onNavigate(item.page)}
-                className="flex flex-col rounded-lg border-2 border-primary/30 bg-white p-6 text-left shadow-sm transition-all hover:border-primary hover:shadow-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              <div
+                key={item.title}
+                className="flex flex-col items-center justify-center rounded-lg border-2 border-primary/30 bg-white p-6 shadow-sm"
               >
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                    <item.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="min-w-0 text-left">
-                    <h4 className="text-lg leading-tight">{item.title}</h4>
-                    <p className="text-sm font-medium text-primary">{item.meta}</p>
-                  </div>
-                </div>
-                <p className="mb-4 flex-1 text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  View full page
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-              </button>
+                <Image
+                  src={item.logo.src}
+                  alt={item.logo.alt}
+                  className="max-h-24 w-full object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -130,12 +110,12 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
           <div className="mx-auto max-w-4xl">
             <div className="rounded-lg border-2 border-primary bg-white shadow-sm">
               <div className="p-8 md:p-12">
-                <h3 className="mb-6 text-center">Why work with us</h3>
+                <h3 className="mb-6 text-center">Why Work With Us</h3>
                 <p className="mb-4 text-muted-foreground">
                   Neurotech at NC State is a student-led organization focused on education and
                   practical assistive devices for children with severe communication challenges.
-                  Collaboration lets us combine rigorous engineering with lived experience and
-                  professional expertise—so projects stay grounded, ethical, and impactful.
+                  Collaboration helps us continue to grow interest in neurotech, expand our impact,
+                  and create high quality solutions that meet real needs.
                 </p>
                 <p className="text-muted-foreground">
                   Whether you bring technical skills, funding, user connections, or simply a
@@ -148,7 +128,7 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
         </div>
 
         <div>
-          <h3 className="mb-8 text-center">Ways to collaborate</h3>
+          <h3 className="mb-8 text-center">Ways to Collaborate</h3>
           <div className="grid gap-6 md:grid-cols-2">
             {ways.map((item) => (
               <div

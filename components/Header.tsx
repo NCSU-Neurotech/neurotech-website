@@ -11,24 +11,21 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
-  const [donationsDropdownOpen, setDonationsDropdownOpen] = useState(false);
 
   const projects = [
+    { id: "epilepsy-decoder", name: "Epilepsy Stage Decoder" },
     { id: "arduino-switch", name: "Arduino Communication Switch" },
-    { id: "eeg-headset", name: "EEG Headset" },
-    { id: "epilepsy-decoder", name: "Epilepsy Decoder" },
+    { id: "eeg-headset", name: "EEG Communication Headset" },
     { id: "eeg-decoder", name: "EEG Movement Decoder" },
     { id: "neural-3d-model", name: "Neural-Driven 3D Model" },
   ];
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
       if (!target.closest('.dropdown-container')) {
         setAboutDropdownOpen(false);
         setProjectsDropdownOpen(false);
-        setDonationsDropdownOpen(false);
       }
     };
 
@@ -67,25 +64,25 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
             >
               Home
             </button>
-            
+
             {/* About Us Dropdown */}
-            <div 
-              className="relative dropdown-container" 
+            <div
+              className="relative dropdown-container"
               onClick={(e) => e.stopPropagation()}
               onMouseEnter={() => {
                 setAboutDropdownOpen(true);
                 setProjectsDropdownOpen(false);
-                setDonationsDropdownOpen(false);
               }}
             >
               <button
                 onClick={() => {
                   setAboutDropdownOpen(!aboutDropdownOpen);
                   setProjectsDropdownOpen(false);
-                  setDonationsDropdownOpen(false);
                 }}
                 className={`flex items-center gap-1 text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
-                  currentPage === "about" || currentPage === "team" ? "text-black bg-gray-200/20" : ""
+                  currentPage === "about" || currentPage === "team" || currentPage === "mission"
+                    ? "text-black bg-gray-200/20"
+                    : ""
                 }`}
               >
                 About Us
@@ -117,46 +114,35 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                       Our leadership and members
                     </p>
                   </button>
+                  <button
+                    onClick={() => {
+                      onNavigate("mission");
+                      setAboutDropdownOpen(false);
+                    }}
+                    className="block w-full rounded-md px-4 py-3 text-left transition-colors hover:bg-accent"
+                  >
+                    <div>Mission</div>
+                    <p className="text-sm text-muted-foreground">
+                      Our goals and vision
+                    </p>
+                  </button>
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => onNavigate("mission")}
-              className={`text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
-                currentPage === "mission" ? "text-black bg-gray-200/20" : ""
-              }`}
-            >
-              Mission
-            </button>
-
-            <button
-              onClick={() => onNavigate("collaborations")}
-              className={`text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
-                currentPage === "collaborations" ||
-                currentPage.startsWith("collaboration-")
-                  ? "text-black bg-gray-200/20"
-                  : ""
-              }`}
-            >
-              Collaborations
-            </button>
-
             {/* Projects Dropdown */}
-            <div 
-              className="relative dropdown-container" 
+            <div
+              className="relative dropdown-container"
               onClick={(e) => e.stopPropagation()}
               onMouseEnter={() => {
                 setProjectsDropdownOpen(true);
                 setAboutDropdownOpen(false);
-                setDonationsDropdownOpen(false);
               }}
             >
               <button
                 onClick={() => {
                   setAboutDropdownOpen(false);
                   setProjectsDropdownOpen(!projectsDropdownOpen);
-                  setDonationsDropdownOpen(false);
                 }}
                 className="flex items-center gap-1 text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md"
               >
@@ -195,6 +181,18 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
             </div>
 
             <button
+              onClick={() => onNavigate("collaborations")}
+              className={`text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
+                currentPage === "collaborations" ||
+                currentPage.startsWith("collaboration-")
+                  ? "text-black bg-gray-200/20"
+                  : ""
+              }`}
+            >
+              Collaborations
+            </button>
+
+            <button
               onClick={() => onNavigate("contact")}
               className={`text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
                 currentPage === "contact" ? "text-black bg-gray-200/20" : ""
@@ -202,54 +200,6 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
             >
               Contact
             </button>
-
-            {/* Donations Dropdown */}
-            <div 
-              className="relative dropdown-container" 
-              onClick={(e) => e.stopPropagation()}
-              onMouseEnter={() => {
-                setDonationsDropdownOpen(true);
-                setAboutDropdownOpen(false);
-                setProjectsDropdownOpen(false);
-              }}
-            >
-              <button
-                onClick={() => {
-                  setAboutDropdownOpen(false);
-                  setDonationsDropdownOpen(!donationsDropdownOpen);
-                  setProjectsDropdownOpen(false);
-                }}
-                className="flex items-center gap-1 text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md"
-              >
-                Donations
-                <ChevronDown className={`h-4 w-4 transition-transform ${donationsDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {donationsDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 w-[250px] rounded-md border bg-popover text-popover-foreground shadow-md p-2 z-50">
-                  <button
-                    onClick={() => {
-                      onNavigate("donate");
-                      setDonationsDropdownOpen(false);
-                    }}
-                    className="block w-full rounded-md px-4 py-3 text-left transition-colors hover:bg-accent"
-                  >
-                    <div>Donate Now</div>
-                    <p className="text-sm text-muted-foreground">
-                      Support our mission
-                    </p>
-                  </button>
-                  <button
-                    disabled
-                    className="block w-full rounded-md px-4 py-3 text-left transition-colors hover:bg-accent opacity-50 cursor-not-allowed"
-                  >
-                    <div>Our Donors</div>
-                    <p className="text-sm text-muted-foreground">
-                      Thank you to our supporters
-                    </p>
-                  </button>
-                </div>
-              )}
-            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -274,7 +224,7 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               >
                 Home
               </button>
-              
+
               <div>
                 <div className="mb-2 text-white/70">About Us</div>
                 <div className="ml-4 flex flex-col gap-2">
@@ -296,18 +246,17 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                   >
                     Meet the Team
                   </button>
+                  <button
+                    onClick={() => {
+                      onNavigate("mission");
+                      setMobileMenuOpen(false);
+                    }}
+                    className="text-left text-sm text-white hover:text-black transition-colors"
+                  >
+                    Mission
+                  </button>
                 </div>
               </div>
-              
-              <button
-                onClick={() => {
-                  onNavigate("mission");
-                  setMobileMenuOpen(false);
-                }}
-                className="text-left text-white hover:text-black transition-colors"
-              >
-                Mission
-              </button>
 
               <button
                 onClick={() => {
@@ -318,7 +267,7 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               >
                 Collaborations
               </button>
-              
+
               <div>
                 <div className="mb-2 text-white/70">Projects</div>
                 <div className="ml-4 flex flex-col gap-2">
@@ -355,27 +304,6 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               >
                 Contact
               </button>
-
-              <div>
-                <div className="mb-2 text-white/70">Donations</div>
-                <div className="ml-4 flex flex-col gap-2">
-                  <button
-                    onClick={() => {
-                      onNavigate("donate");
-                      setMobileMenuOpen(false);
-                    }}
-                    className="text-left text-white hover:text-black transition-colors"
-                  >
-                    Donate Now
-                  </button>
-                  <button
-                    disabled
-                    className="text-left text-white/50 hover:text-white/50 transition-colors cursor-not-allowed"
-                  >
-                    Our Donors
-                  </button>
-                </div>
-              </div>
             </nav>
           </div>
         )}

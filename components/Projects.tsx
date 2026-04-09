@@ -1,5 +1,5 @@
 import { Image } from "./Image";
-import { ArrowRight, Calendar, Users } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 interface ProjectsProps {
   onNavigate: (page: string) => void;
@@ -8,56 +8,51 @@ interface ProjectsProps {
 export function Projects({ onNavigate }: ProjectsProps) {
   const projects = [
     {
+      id: "epilepsy-decoder",
+      title: "Epilepsy / Seizure State Decoder",
+      description:
+        "Deep learning classification of seizure states from EEG using the Bonn dataset drive by ANN and RNN models.",
+      image:
+        "https://www.neurocenternj.com/wp-content/uploads/2021/01/purple-brain-scans-epilepsy-800x400.jpg",
+      status: "Completed",
+      started: "January 2026",
+    },
+    {
       id: "arduino-switch",
       title: "Arduino Communication Switch",
       description:
         "Our flagship project developing a specialized Arduino-based switch system that enables children with severe disabilities to communicate their needs through simple, accessible button presses.",
       image: "https://images.unsplash.com/photo-1634452021892-eaabbdc4a0bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmR1aW5vJTIwZWxlY3Ryb25pY3MlMjBoYXJkd2FyZXxlbnwxfHx8fDE3NjM2MDA0NTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      status: "Completed",
-      team: "5 members",
+      status: "In Testing",
       started: "October 2025",
     },
     {
       id: "eeg-headset",
-      title: "EEG Headset for Reading Brain Signals for Communication",
+      title: "EEG Communication Headset",
       description:
-        "An upcoming initiative focused on expanding our assistive technology portfolio. More details coming soon as we develop this exciting new solution.",
+        "An upcoming project focused on expanding our assistive technology portfolio with the goal of improving communication for children with sever disabilities by developing an EEG headset that can read brain signals and translate them into actionable communication outputs.",
       image: "https://plus.unsplash.com/premium_photo-1681426643645-77d6b5130b50?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      status: "Planning",
-      team: "8 members",
+      status: "Planned",
       started: "November 2025",
-    },
-    {
-      id: "epilepsy-decoder",
-      title: "Epilepsy / Seizure State Decoder",
-      description:
-        "Deep learning classification of seizure states from EEG using the Bonn dataset—segmentation, feature extraction, and models from ANNs through RNNs, LSTMs, and GRUs.",
-      image:
-        "https://www.neurocenternj.com/wp-content/uploads/2021/01/purple-brain-scans-epilepsy-800x400.jpg",
-      status: "Completed",
-      team: "3 members",
-      started: "January 2026",
     },
     {
       id: "eeg-decoder",
       title: "EEG Movement Decoder",
       description:
-        "A planned project to map brain signals to specific physical movements—currently in the planning stage and not yet started.",
+        "A planned project to map brain signals to specific physical movements using EEG data.",
       image:
         "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1080&q=80&auto=format&fit=crop",
-      status: "Planning",
-      team: "TBD",
+      status: "Planned",
       started: "TBD",
     },
     {
       id: "neural-3d-model",
       title: "Neural-Driven 3D Model",
       description:
-        "An initiative to drive a 3D avatar or scene from live neural input so movement in the model reflects the user’s brain activity—in planning.",
+        "An initiative to drive a 3D avatar or scene from live neural input so movement in the model reflects the user’s brain activity",
       image:
         "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1080&q=80&auto=format&fit=crop",
-      status: "Planning",
-      team: "TBD",
+      status: "Planned",
       started: "TBD",
     },
   ];
@@ -104,10 +99,7 @@ export function Projects({ onNavigate }: ProjectsProps) {
                 </p>
 
                 <div className="mb-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4" />
-                    {project.team}
-                  </div>
+                
                   <div className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     {project.started}

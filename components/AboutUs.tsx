@@ -45,8 +45,8 @@ export function AboutUs() {
           <div>
             <h3 className="mb-6">Who We Are</h3>
             <p className="mb-4 text-muted-foreground">
-              Neurotech at NC State is a student-led organization at North Carolina State University 
-              dedicated to spreading education and developing assistive technology solutions for individuals with severe 
+              Neurotech at NC State is a student-led organization dedicated to spreading neurotechnology and education throughout
+              the Research Triangle Park area. We also work on developing assistive technologies solutions for individuals with severe
               mental and physical disabilities.
             </p>
             <p className="mb-4 text-muted-foreground">

@@ -6,13 +6,10 @@ import { Mission } from "./components/Mission";
 import { Projects } from "./components/Projects";
 import { ProjectDetail } from "./components/ProjectDetail";
 import { Contact } from "./components/Contact";
-import { Donate } from "./components/Donate";
-import { Donors } from "./components/Donors";
 import { MeetTheTeam } from "./components/MeetTheTeam";
 import { ClubMeetings } from "./components/ClubMeetings";
 import { Collaborations } from "./components/Collaborations";
-import { CollaborationDetail } from "./components/CollaborationDetail";
-import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
+// import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -44,7 +41,7 @@ export default function App() {
       case "home":
         return (
           <>
-            <GtecHackathonBanner onNavigate={handleNavigate} />
+            {/* <GtecHackathonBanner onNavigate={handleNavigate} /> */}
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -52,7 +49,7 @@ export default function App() {
       case "about":
         return <AboutUs />;
       case "team":
-        return <MeetTheTeam />;
+        return <MeetTheTeam onNavigate={handleNavigate} />;
       case "mission":
         return <Mission />;
       case "collaborations":
@@ -101,10 +98,11 @@ export default function App() {
         );
       case "project-eeg-headset":
         return (
-          <ProjectDetail 
-          key="eeg-headset"
-          projectId="eeg-headset" 
-          onNavigate={handleNavigate} />
+          <ProjectDetail
+            key="eeg-headset"
+            projectId="eeg-headset"
+            onNavigate={handleNavigate}
+          />
         );
       case "project-epilepsy-decoder":
         return (
@@ -132,14 +130,10 @@ export default function App() {
         );
       case "contact":
         return <Contact />;
-      case "donate":
-        return <Donate onNavigate={handleNavigate} />;
-      case "donors":
-        return <Donors onNavigate={handleNavigate} />;
       default:
         return (
           <>
-            <GtecHackathonBanner onNavigate={handleNavigate} />
+            {/* <GtecHackathonBanner onNavigate={handleNavigate} /> */}
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -188,12 +182,6 @@ export default function App() {
                 >
                   Contact
                 </button>
-                <button
-                  onClick={() => handleNavigate("donate")}
-                  className="text-left text-white/80 hover:text-white transition-colors"
-                >
-                  Donate
-                </button>
               </div>
             </div>
             <div>
@@ -202,12 +190,11 @@ export default function App() {
                 <p>North Carolina State University</p>
                 <p>Raleigh, NC</p>
                 <p className="mt-2">neurotech-org@ncsu.edu</p>
-                <p>(919)-437-1380</p>
               </div>
             </div>
           </div>
           <div className="mt-8 border-t border-white/20 pt-8 text-center text-sm text-white/60">
-            <p>© 2025 Neurotech at NC State. All rights reserved.</p>
+            <p>© 2026 Neurotech at NC State. All rights reserved.</p>
           </div>
         </div>
       </footer>

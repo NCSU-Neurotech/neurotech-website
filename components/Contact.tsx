@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -28,18 +28,15 @@ export function Contact() {
     });
   };
 
+  const inputClass =
+    "flex h-10 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 transition-colors";
+
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
       value: "neurotech-org@ncsu.edu",
       link: "mailto:neurotech-org@ncsu.edu",
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "(919) 437-1380",
-      link: "tel:+19194371380",
     },
     {
       icon: MapPin,
@@ -56,7 +53,7 @@ export function Contact() {
           <h2 className="mb-4 text-3xl md:text-4xl">Contact Us</h2>
           <div className="mx-auto h-1 w-24 bg-primary mb-6"></div>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Have questions about our projects? Interested in collaborating or volunteering? 
+            Have questions about our projects? Interested in collaborating or volunteering?
             We'd love to hear from you!
           </p>
         </div>
@@ -65,7 +62,7 @@ export function Contact() {
           <div className="lg:col-span-2">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
               <div className="p-6">
-                <h3 className="mb-4">Send us a message</h3>
+                <h3 className="mb-4">Send us a Message</h3>
               </div>
               <div className="p-6 pt-0">
                 {submitted ? (
@@ -93,7 +90,7 @@ export function Contact() {
                           onChange={handleChange}
                           required
                           placeholder="Your name"
-                          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className={inputClass}
                         />
                       </div>
                       <div>
@@ -106,7 +103,7 @@ export function Contact() {
                           onChange={handleChange}
                           required
                           placeholder="your.email@example.com"
-                          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                          className={inputClass}
                         />
                       </div>
                     </div>
@@ -121,7 +118,7 @@ export function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="What is this about?"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className={inputClass}
                       />
                     </div>
 
@@ -134,7 +131,7 @@ export function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="Tell us more..."
-                        className="flex min-h-[150px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className={`${inputClass} min-h-[150px] h-auto`}
                       />
                     </div>
 
@@ -181,25 +178,25 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="rounded-lg border bg-primary text-primary-foreground shadow-sm">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
               <div className="p-6">
-                <h4 className="mb-3 text-white">Meeting Hours</h4>
+                <h4 className="mb-4">Meeting Hours</h4>
                 <div className="space-y-4 text-sm">
-                  <div>
+                  <div className="rounded-lg border border-border/80 bg-muted/30 px-4 py-3">
                     <div className="flex justify-between gap-2">
-                      <span className="text-white/90">Wednesday</span>
-                      <span className="shrink-0 text-white">7PM – 9PM</span>
+                      <span className="font-medium">Wednesday</span>
+                      <span className="shrink-0 text-muted-foreground">7PM – 9PM</span>
                     </div>
-                    <p className="mt-1 text-white/85">
+                    <p className="mt-1 text-muted-foreground">
                       Engineering Building 3, Room 2236 · Centennial Campus, NC State
                     </p>
                   </div>
-                  <div>
+                  <div className="rounded-lg border border-border/80 bg-muted/30 px-4 py-3">
                     <div className="flex justify-between gap-2">
-                      <span className="text-white/90">Friday</span>
-                      <span className="shrink-0 text-white">4PM – 6PM</span>
+                      <span className="font-medium">Friday</span>
+                      <span className="shrink-0 text-muted-foreground">4PM – 6PM</span>
                     </div>
-                    <p className="mt-1 text-white/85">
+                    <p className="mt-1 text-muted-foreground">
                       Engineering Building 2, Room 1227 · Centennial Campus, NC State
                     </p>
                   </div>

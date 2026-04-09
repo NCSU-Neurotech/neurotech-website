@@ -1,6 +1,10 @@
 import { Image } from "./Image";
 import { Linkedin, Mail } from "lucide-react";
 
+interface MeetTheTeamProps {
+  onNavigate: (page: string) => void;
+}
+
 interface TeamMember {
   name: string;
   role: string;
@@ -10,7 +14,7 @@ interface TeamMember {
   linkedin?: string;
 }
 
-export function MeetTheTeam() {
+export function MeetTheTeam({ onNavigate }: MeetTheTeamProps) {
   const teamLeaders: TeamMember[] = [
     {
       name: "Rayan Rao",
@@ -22,7 +26,7 @@ export function MeetTheTeam() {
     },
     {
       name: "Armaan Raina",
-      role: "Cofounder, Co-President, Algorithms Lead",
+      role: "Cofounder, Co-President, Software Lead",
       image: "/images/team/armaani.webp",
       bio: "Armaan is a junior double majoring in Computer Science and Statistics. He cofounded the club alongside Rayan and Will, mainly focusing on decoding algorithms, general device design, and grant writing.",
       email: "araina3@ncsu.edu",
@@ -36,15 +40,6 @@ export function MeetTheTeam() {
       email: "twsammon@ncsu.edu",
       linkedin: "will-sammons-7196a42b5/"
     },
-    {
-      name: "Gavin McKay",
-      role: "Software Lead",
-      image: "/images/team/gabinkerton.webp",
-      bio: "Gavin is a junior in Computer Science minoring in Philosophy and Economics. He is the head of software development team, leading and designing assitive communicative software for the children of Hilltop Home. (I also made the website!)",
-      email: "gjmckay@ncsu.edu",
-      linkedin: "gjmckay"
-    },
-
     {
       name: "Dr. Alper Bozkurt",
       role: "Faculty Advisor",
@@ -69,9 +64,9 @@ export function MeetTheTeam() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {teamLeaders.map((member, index) => (
+          {teamLeaders.map((member) => (
             <div
-              key={index}
+              key={member.name}
               className="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="aspect-square w-full overflow-hidden bg-muted">
@@ -124,17 +119,16 @@ export function MeetTheTeam() {
               Whether you're interested in engineering, design, research, or community outreach, 
               there's a place for you in Neurotech at NC State.
             </p>
-            <a
-              href="mailto:contact@neurotech-org@ncsu.edu"
+            <button
+              onClick={() => onNavigate("contact")}
               className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
             >
               Get in Touch
               <Mail className="ml-2 h-4 w-4" />
-            </a>
+            </button>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

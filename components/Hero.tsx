@@ -1,5 +1,4 @@
 import { Image } from "./Image";
-import { ArrowRight } from "lucide-react";
 
 interface HeroProps {
   onNavigate: (page: string) => void;
@@ -28,7 +27,7 @@ export function Hero({ onNavigate }: HeroProps) {
           </h1>
           
           <p className="mb-8 text-lg md:text-xl text-gray-200">
-            Neurotech at NC State is dedicated to spreading education and helping severely mentally and physically 
+            Neurotech at NC State is dedicated to spreading education in RTP and helping severely mentally and physically 
             disabled children communicate with their caretakers through innovative assistive technology.
           </p>
           
@@ -38,7 +37,6 @@ export function Hero({ onNavigate }: HeroProps) {
               onClick={() => onNavigate("projects")}
             >
               View Our Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             <button
               className="inline-flex items-center justify-center rounded-md border-2 border-white bg-transparent px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-primary hover:border-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"

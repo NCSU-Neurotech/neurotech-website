@@ -10,12 +10,11 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
   const projects: { [key: string]: any } = {
     "arduino-switch": {
       title: "Arduino Communication Switch",
-      status: "Completed",
+      status: "In Testing",
       description:
         "Our flagship project developing a specialized Arduino-based switch system that enables children with severe disabilities to communicate their needs through simple, accessible button presses.",
       image: "https://images.unsplash.com/photo-1634452021892-eaabbdc4a0bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmR1aW5vJTIwZWxlY3Ryb25pY3MlMjBoYXJkd2FyZXxlbnwxfHx8fDE3NjM2MDA0NTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       started: "August 2025",
-      team: "5 members",
       overview:
         "This project aims to create an affordable, easy-to-use communication device for children with severe physical and cognitive disabilities. Using Arduino microcontrollers and customizable switches that can be programmed to trigger commands and can be adapted to each child's specific needs and abilities.",
       goals: [
@@ -27,64 +26,56 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
       ],
       updates: [
         {
-          date: "August 2025",
-          title: "Initial Idea Development Phase",
-          description:
-            "Founders initially developed the idea with the goals of reduced size, make compatible with the existing audio cable switch on children's wheelchairs, add ability to change input type, investigate need for debouncing, and consider ability to add multiple switches and inputs.",
-          status: "completed",
+            date: "January 2026",
+            title: "Software Testing and Debugging",
+            description:
+                "Testing and debugging the software to ensure it is functioning correctly.",
+            status: "in-progress",
         },
         {
-          date: "October 2025",
-          title: "Prototype Development",
-          description:
-            "Completed development of an initial arudino switch prototype.",
-          status: "completed",
+            date: "December 2025",
+            title: "Prototype Testing and Feedback",
+            description:
+                "Testing the prototype with the children of Hilltop Home to gather feedback and make improvements.",
+            status: "completed",
         },
         {
-          date: "November 2025",
-          title: "Breadboard Circuit Development",
-          description:
-            "Developing a breadboard circuit to test the functionality of the arduino switch prototype.",
-          status: "completed",
-        }, 
-        {
-          date: "November 2025",
-          title: "Software Design Integration with Prototype",
-          description:
-            "Integrating the software design with the arduino switch prototype to test the functionality of the software.",
-          status: "completed",
+            date: "November 2025",
+            title: "Breadboard Circuit Development",
+            description:
+                "Developing a breadboard circuit to test the functionality of the arduino switch prototype.",
+            status: "completed",
         },
         {
-          date: "December 2025",
-          title: "Software Testing and Debugging",
-          description:
-            "Testing and debugging the software to ensure it is functioning correctly.",
-          status: "completed",
+            date: "November 2025",
+            title: "Software Design Integration with Prototype",
+            description:
+                "Integrating the software design with the arduino switch prototype to test the functionality of the software.",
+            status: "completed",
         },
         {
-          date: "December 2025",
-          title: "Prototype Testing and Feedback",
-          description:
-            "Testing the prototype with the children of Hilltop Home to gather feedback and make improvements.",
-          status: "completed",
+            date: "October 2025",
+            title: "Prototype Development",
+            description:
+                "Completed development of an initial arudino switch prototype.",
+            status: "completed",
         },
         {
-          date: "January 2026",
-          title: "Completed Development of Arduino Communication Switch",
-          description:
-            "Completed the development of the arduino communication switch. The device is now being used by the children of Hilltop Home to communicate their needs.",
-          status: "completed",
+            date: "August 2025",
+            title: "Initial Idea Development Phase",
+            description:
+                "Founders initially developed the idea with the goals of reduced size, make compatible with the existing audio cable switch on children's wheelchairs, add ability to change input type, investigate need for debouncing, and consider ability to add multiple switches and inputs.",
+            status: "completed",
         }
       ],
     },
     "eeg-headset": {
-      title: "EEG Headset for Reading Brain Signals for Communication",
-      status: "Planning",
+      title: "EEG Communication Headset",
+      status: "In Progress",
       description:
         "This project focuses on our EEG headset that will be used to read the brain signals of children with severe disabilities. Determining what signals coorelate with communication will be a key step in developing assistive technologies.",
       image: "https://plus.unsplash.com/premium_photo-1681426643645-77d6b5130b50?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       started: "November 2025",
-      team: "8 members",
       overview:
         "This project is currently in the planning phase. We're conducting research and gathering requirements for our next assistive technology initiative. Stay tuned for updates!",
       goals: [
@@ -95,23 +86,29 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
       ],
       updates: [
         {
+            date: "March 2026",
+            title: "Hardware Testing and Configuration",
+            description:
+                "Aquired new, higher quality EEG hardware and are working on testing and configuring it to properly display brain signals. This will allow us to get higher quality signals to use for our decoding efforts and determine what signals coorelate with communication.",
+            status: "in-progress",
+        },
+        {
           date: "November 2025",
           title: "EEG Configuration",
           description:
             "Currently configuring our EEG headset to properly display the brain signals to determine what signals coorelate with communication.",
-          status: "in-progress",
+          status: "completed",
         },
       ],
     },
     "epilepsy-decoder": {
       title: "Epilepsy / Seizure State Decoder",
-      status: "Completed",
+      status: "Completed February 2026",
       description:
         "In an effort to explore the intersection of deep learning and neural signals, we applied neural networks to the classification of seizure states. Using the Bonn EEG dataset, we transformed raw signals into usable segments, extracted features, and trained models ranging from a feedforward ANN (95.25% accuracy) to time series architectures including RNNs, LSTMs, GRUs, and related approaches.",
       image:
         "https://www.neurocenternj.com/wp-content/uploads/2021/01/purple-brain-scans-epilepsy-800x400.jpg",
       started: "January 2026",
-      team: "3 members",
       overview:
         "Work used the public Bonn EEG dataset at https://www.kaggle.com/datasets/quands/eeg-dataset. The project ran from January through February 2026 and is complete: preprocessing and segmentation, feature design, baseline ANN performance, and structured exploration of recurrent and sequence models for seizure vs. non-seizure discrimination.",
       goals: [
@@ -123,17 +120,10 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
       ],
       updates: [
         {
-          date: "January 2026",
-          title: "Kickoff, Bonn dataset, and segmentation",
+          date: "February 2026",
+          title: "Project completed",
           description:
-            "Project started: acquired the Bonn EEG dataset, defined train/validation splits, implemented signal segmentation, and normalized segments for downstream feature extraction and modeling.",
-          status: "completed",
-        },
-        {
-          date: "January 2026",
-          title: "Feature extraction and ANN baseline",
-          description:
-            "Extracted features from segments, trained a feedforward ANN for seizure-state classification, and reached 95.25% accuracy on the chosen validation setup.",
+            "All planned modeling milestones finished; results and methodology consolidated. Further optional experiments remain possible as follow-up research but are outside the original scope.",
           status: "completed",
         },
         {
@@ -144,23 +134,29 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
           status: "completed",
         },
         {
-          date: "February 2026",
-          title: "Project completed",
+          date: "January 2026",
+          title: "Feature extraction and ANN baseline",
           description:
-            "All planned modeling milestones finished; results and methodology consolidated. Further optional experiments remain possible as follow-up research but are outside the original scope.",
+            "Extracted features from segments, trained a feedforward ANN for seizure-state classification, and reached 95.25% accuracy on the chosen validation setup.",
+          status: "completed",
+        },
+        {
+          date: "January 2026",
+          title: "Kickoff, Bonn dataset, and segmentation",
+          description:
+            "Project started: acquired the Bonn EEG dataset, defined train/validation splits, implemented signal segmentation, and normalized segments for downstream feature extraction and modeling.",
           status: "completed",
         },
       ],
     },
     "eeg-decoder": {
       title: "EEG Movement Decoder",
-      status: "Planning",
+      status: "Planned",
       description:
-        "A future project to decode EEG (or related neural signals) into estimates of physical movements—closing the loop between brain activity and motor intent for assistive or research applications.",
+        "A future project to decode EEG (or related neural signals) into estimates of physical movements for assistive and research applications.",
       image:
-        "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1080&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1080&q=80&auto=format&fit=crop", 
       started: "Not started",
-      team: "TBD",
       overview:
         "This effort has not started; it is in the planning stage. The objective is to map patterns in brain signals to concrete movements or movement classes (e.g., for prosthetics, avatars, or rehabilitation tools). Next steps include defining hardware and dataset requirements, ethical review where needed, and a minimal proof-of-concept before full development.",
       goals: [
@@ -184,11 +180,10 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
       title: "Neural-Driven 3D Model",
       status: "Planning",
       description:
-        "An initiative to animate a 3D model—such as an avatar or abstract figure—so that its motion reflects live or recorded neural input, making brain activity tangible for demos, therapy contexts, or outreach.",
+        "An initiative to animate a 3D model—such as an avatar or abstract figure that reflects live movement through neural input for assistive, research, and outreach applications.",
       image:
         "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=1080&q=80&auto=format&fit=crop",
       started: "Not started",
-      team: "TBD",
       overview:
         "This project is in early planning. The vision is to pair a real-time or near–real-time neural signal stream with a 3D scene (e.g., via a game engine or WebGL) so that features derived from the signal drive pose, expression, or motion parameters. Partnership with the EEG headset or decoder projects may reduce duplicate work.",
       goals: [
@@ -297,8 +292,6 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
                       <p>{project.started}</p>
                     </div>
                     <div>
-                      <p className="mb-1 text-sm text-muted-foreground">Team Size</p>
-                      <p>{project.team}</p>
                     </div>
                     <div>
                       <p className="mb-1 text-sm text-muted-foreground">Status</p>
@@ -318,7 +311,7 @@ export function ProjectDetail({ projectId, onNavigate }: ProjectDetailProps) {
               <div
                 key={index}
                 className={`rounded-lg border bg-card text-card-foreground shadow-sm ${
-                  update.status === "in-progress" ? "border-primary border-2" : ""
+                   index === 0 ? "border-primary border-2" : ""
                 }`}
               >
                 <div className="p-6">
