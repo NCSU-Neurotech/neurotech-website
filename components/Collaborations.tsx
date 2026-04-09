@@ -68,6 +68,13 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
         alt: "IDUN Technologies logo",
       },
     },
+    {
+      title: "Hilltop Home",
+      logo: {
+        src: "/images/collaborations/hilltop-logo.svg", // update path as needed
+        alt: "Hilltop Home logo",
+      },
+    },
   ];
 
   return (
