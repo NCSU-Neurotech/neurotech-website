@@ -40,7 +40,7 @@ export function Hero({ onNavigate }: HeroProps) {
             </button>
             <button
               className="inline-flex items-center justify-center rounded-md border-2 border-white bg-transparent px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-primary hover:border-primary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
-              onClick={() => onNavigate("donate")}
+              onClick={() => onNavigate("collaborations")}
             >
               Support Our Mission
             </button>
