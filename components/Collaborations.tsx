@@ -35,7 +35,7 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
       icon: Users,
       title: "Student organizations",
       description:
-        "We love working with other clubs and chapters on join workshops, hackathons, and awareness campaigns that grow the neurotech and accessibility community at NC State.",
+        "We love working with other clubs and chapters on joint workshops, hackathons, and awareness campaigns that grow the neurotech and accessibility community at NC State.",
     },
   ];
 
