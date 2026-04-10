@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, Send, Linkedin } from "lucide-react";
+import { SiDiscord, SiInstagram } from "react-icons/si";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -39,10 +40,22 @@ export function Contact() {
       link: "mailto:neurotech-org@ncsu.edu",
     },
     {
-      icon: MapPin,
-      title: "Location",
-      value: "North Carolina State University, Raleigh, NC",
-      link: null,
+      icon: SiInstagram,
+      title: "Instagram",
+      value: "@neurotech.ncsu", // update handle as needed
+      link: "https://www.instagram.com/neurotech.ncsu/", // update URL as needed
+    },
+    {
+      icon: Linkedin,
+      title: "LinkedIn",
+      value: "Neurotech at NCSU", // update display name as needed
+      link: "https://www.linkedin.com/company/neurotechatncsu/", // update URL as needed
+    },
+    {
+      icon: SiDiscord,
+      title: "Discord",
+      value: "Join our Discord", // update display name as needed
+      link: "https://discord.gg/duzBPkJcBB", // update URL as needed
     },
   ];
 

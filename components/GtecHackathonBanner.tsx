@@ -25,7 +25,7 @@ export function GtecHackathonBanner({ onNavigate }: GtecHackathonBannerProps) {
         </div>
         <button
           type="button"
-          onClick={() => onNavigate("collaboration-g-tec-hackathon")}
+          onClick={() => onNavigate("hackathon")}
           className="min-w-0 flex-1 text-left text-sm leading-snug transition-opacity hover:opacity-85 md:text-base"
         >
           <span className="font-bold tracking-tight text-amber-950">

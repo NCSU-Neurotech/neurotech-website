@@ -9,7 +9,10 @@ import { Contact } from "./components/Contact";
 import { MeetTheTeam } from "./components/MeetTheTeam";
 import { ClubMeetings } from "./components/ClubMeetings";
 import { Collaborations } from "./components/Collaborations";
-// import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
+import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
+import { GtecHackathon } from "./components/g-tec-hackathon";
+import { SiInstagram, SiDiscord } from "react-icons/si";
+import { Linkedin } from "lucide-react";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -41,7 +44,7 @@ export default function App() {
       case "home":
         return (
           <>
-            {/* <GtecHackathonBanner onNavigate={handleNavigate} /> */}
+            {<GtecHackathonBanner onNavigate={handleNavigate} />}
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -54,38 +57,9 @@ export default function App() {
         return <Mission />;
       case "collaborations":
         return <Collaborations onNavigate={handleNavigate} />;
-      case "collaboration-ant-neuro":
-        return (
-          <CollaborationDetail
-            key="ant-neuro"
-            collaborationId="ant-neuro"
-            onNavigate={handleNavigate}
-          />
-        );
       case "collaboration-g-tec-hackathon":
-        return (
-          <CollaborationDetail
-            key="g-tec-hackathon"
-            collaborationId="g-tec-hackathon"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "collaboration-neuropawn":
-        return (
-          <CollaborationDetail
-            key="neuropawn"
-            collaborationId="neuropawn"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "collaboration-idun":
-        return (
-          <CollaborationDetail
-            key="idun"
-            collaborationId="idun"
-            onNavigate={handleNavigate}
-          />
-        );
+      case "hackathon":
+        return <GtecHackathon onNavigate={handleNavigate} />;
       case "projects":
         return <Projects onNavigate={handleNavigate} />;
       case "project-arduino-switch":
@@ -133,7 +107,7 @@ export default function App() {
       default:
         return (
           <>
-            {/* <GtecHackathonBanner onNavigate={handleNavigate} /> */}
+            {<GtecHackathonBanner onNavigate={handleNavigate} />}
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -150,10 +124,39 @@ export default function App() {
           <div className="grid gap-8 md:grid-cols-3">
             <div>
               <h4 className="mb-4 text-white">Neurotech at NC State</h4>
-              <p className="text-sm text-white/80">
+              <p className="mb-4 text-sm text-white/80">
                 Empowering communication through innovative assistive technology
                 for children with disabilities.
               </p>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.linkedin.com/company/neurotechatncsu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href="https://www.instagram.com/neurotech.ncsu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors"
+                  aria-label="Instagram"
+                >
+                  <SiInstagram size={20} />
+                </a>
+                <a
+                  href="https://discord.gg/duzBPkJcBB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors"
+                  aria-label="Discord"
+                >
+                  <SiDiscord size={20} />
+                </a>
+              </div>
             </div>
             <div>
               <h4 className="mb-4 text-white">Quick Links</h4>
