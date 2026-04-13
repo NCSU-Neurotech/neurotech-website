@@ -50,7 +50,7 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
         {/* Flyer */}
         <div className="mx-auto mb-16 max-w-2xl overflow-hidden rounded-xl border shadow-md">
           <Image
-            src="/images/collaborations/Neurotech_Hackathon_Poster-1.png"
+            src="/images/collaborations/actual_hackathon_poster.png"
             alt="BR41N.IO Spring School 2026 Hackathon Flyer"
             className="w-full object-contain"
           />
