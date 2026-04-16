@@ -20,12 +20,27 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
     {
       icon: MapPin,
       label: "Location",
-      value: "NC State University, Raleigh, NC (Exact venue TBD)", 
+      value: "Entrepreneurship Garage, NC State University, Raleigh, NC",
     },
     {
       icon: Users,
       label: "Hosted by",
       value: "BR41N.IO & g.tec medical engineering",
+    },
+  ];
+
+  const sponsors = [
+    {
+      name: "g.tec medical engineering",
+      logo: "/images/collaborations/g-tec-logo.svg",
+      url: "https://www.gtec.at",
+      description: "Pioneer in brain-computer interface technology and neurotechnology research.",
+    },
+    {
+      name: "Neuropawn",
+      logo: "/images/collaborations/neuropawn-logo.png",
+      url: "https://www.neuropawn.tech",
+      description: "Advancing accessible neurotechnology solutions for researchers and developers.",
     },
   ];
 
@@ -47,33 +62,39 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
           </p>
         </div>
 
-        {/* Flyer */}
-        <div className="mx-auto mb-16 max-w-2xl overflow-hidden rounded-xl border shadow-md">
-          <Image
-            src="/images/collaborations/actual_hackathon_poster.png"
-            alt="BR41N.IO Spring School 2026 Hackathon Flyer"
-            className="w-full object-contain"
-          />
-        </div>
+        {/* Poster + Event Details side by side */}
+        <div className="mx-auto mb-16 max-w-5xl">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
 
-        {/* Event Details */}
-        <div className="mx-auto mb-16 max-w-4xl">
-          <h2 className="mb-8 text-center text-2xl">Event Details</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {details.map((detail) => (
-              <div
-                key={detail.label}
-                className="flex gap-4 rounded-xl border bg-card p-5 shadow-sm"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <detail.icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="mb-0.5 text-sm text-muted-foreground">{detail.label}</p>
-                  <p className="font-medium">{detail.value}</p>
-                </div>
+            {/* Flyer */}
+            <div className="w-full overflow-hidden rounded-xl border shadow-md lg:w-2/5 lg:shrink-0">
+              <Image
+                src="/images/collaborations/actual_hackathon_poster.png"
+                alt="BR41N.IO Spring School 2026 Hackathon Flyer"
+                className="w-full object-contain"
+              />
+            </div>
+
+            {/* Event Details */}
+            <div className="flex-1">
+              <h2 className="mb-6 text-2xl">Event Details</h2>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                {details.map((detail) => (
+                  <div
+                    key={detail.label}
+                    className="flex gap-4 rounded-xl border bg-card p-5 shadow-sm"
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <detail.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="mb-0.5 text-sm text-muted-foreground">{detail.label}</p>
+                      <p className="font-medium">{detail.value}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
 
@@ -91,7 +112,7 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
                   <img
                     src="/images/logo/icon.svg"
-                    alt="g.tec logo"
+                    alt="Club logo"
                     className="h-8 w-8 object-contain"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = "none";
@@ -152,6 +173,49 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
           </div>
         </div>
 
+        {/* Sponsors */}
+        <div className="mx-auto mb-16 max-w-4xl">
+          <h2 className="mb-2 text-center text-2xl">Sponsors</h2>
+          <p className="mb-8 text-center text-muted-foreground">
+            Thank you to our generous sponsors who make this event possible.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {sponsors.map((sponsor) => (
+              <a
+                key={sponsor.name}
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center rounded-xl border bg-card p-8 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="mb-4 flex h-20 w-full items-center justify-center">
+                  <img
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    className="max-h-16 max-w-[180px] object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = "none";
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = "flex";
+                    }}
+                  />
+                  {/* Fallback if logo fails to load */}
+                  <div
+                    className="hidden h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-medium text-primary"
+                    style={{ display: "none" }}
+                  >
+                    {sponsor.name.charAt(0)}
+                  </div>
+                </div>
+                <h3 className="mb-2 text-center text-lg font-medium">{sponsor.name}</h3>
+                <p className="text-center text-sm text-muted-foreground">{sponsor.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+
         {/* YouTube */}
         <div className="mx-auto max-w-2xl rounded-xl border bg-card p-8 text-center shadow-sm">
           <div className="mb-4 flex justify-center">
@@ -165,7 +229,7 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
             g.tec medical engineering YouTube channel.
           </p>
           <a
-            href="https://www.youtube.com/@gtecmedicalengineering" // TODO: confirm YouTube channel URL
+            href="https://www.youtube.com/@gtecmedicalengineering"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-red-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
