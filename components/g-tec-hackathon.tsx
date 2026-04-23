@@ -87,7 +87,7 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
     {
       icon: Clock,
       label: "Time",
-      value: "10:00 AM - 10:00 AM (24 hours)",
+      value: "9:00 AM - 10:00 PM April 25, 10:00 AM - 3:00PM April 26",
     },
     {
       icon: MapPin,
@@ -113,6 +113,12 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
       logo: "/images/collaborations/neuropawn-logo.png",
       url: "https://www.neuropawn.tech",
       description: "Advancing accessible neurotechnology solutions for researchers and developers.",
+    },
+    {
+      name: "Hilltop Home",
+      logo: "/images/collaborations/hilltop-logo.svg",
+      url: "https://hilltophom.org",
+      description: "Intermediate care facility",
     },
   ];
 
@@ -364,7 +370,7 @@ return (
           {/* Flyer */}
           <div className="w-full overflow-hidden rounded-xl border shadow-md lg:w-2/5 lg:shrink-0">
             <Image
-              src="/images/collaborations/actual_hackathon_poster.png"
+              src="/images/collaborations/poster_1.PNG"
               alt="BR41N.IO Spring School 2026 Hackathon Flyer"
               className="w-full object-contain"
             />
@@ -518,11 +524,11 @@ return (
 
       {/* Sponsors */}
       <div className="mx-auto mb-16 max-w-4xl">
-        <h2 className="mb-2 text-center text-2xl">Sponsors</h2>
+        <h2 className="mb-3 text-center text-xl">Sponsors</h2>
         <p className="mb-8 text-center text-muted-foreground">
           Thank you to our generous sponsors who make this event possible.
         </p>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-3">
           {sponsors.map((sponsor) => (
             <a
               key={sponsor.name}
