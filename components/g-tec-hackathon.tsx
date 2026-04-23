@@ -29,11 +29,16 @@ function ScheduleAccordion({
 }) {
   const [openIndex, setOpenIndex] = useState<number>(defaultOpenIndex);
 
+  // Memoize the current date in YYYY-MM-DD format
+  const todayDateString = new Date().toLocaleDateString('en-CA'); // en-CA format is YYYY-MM-DD
+
   return (
     <div className="divide-y">
       {days.map((day, i) => {
         const isOpen = openIndex === i;
-        const isToday = day.date === "2026-04-22";
+        // Compare against the dynamic date instead of a hardcoded string
+        const isToday = day.date === todayDateString;
+
         return (
           <div key={day.label}>
             <button
@@ -92,7 +97,7 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
     {
       icon: MapPin,
       label: "Location",
-      value: "Entrepreneurship Garage, NC State University, Raleigh, NC",
+      value: "NC State Albright Entrepreneurship Garage, Partners I, #1650, 1017 Main Campus Dr, Raleigh, NC 27606",
     },
     {
       icon: Users,
@@ -117,7 +122,7 @@ export function GtecHackathon({ onNavigate }: GtecHackathonProps) {
     {
       name: "Hilltop Home",
       logo: "/images/collaborations/hilltop-logo.svg",
-      url: "https://hilltophom.org",
+      url: "https://hilltophome.org",
       description: "Intermediate care facility",
     },
   ];
@@ -370,7 +375,7 @@ return (
           {/* Flyer */}
           <div className="w-full overflow-hidden rounded-xl border shadow-md lg:w-2/5 lg:shrink-0">
             <Image
-              src="/images/collaborations/poster_1.PNG"
+              src="/images/collaborations/actual_actual_hackathon_poster.PNG"
               alt="BR41N.IO Spring School 2026 Hackathon Flyer"
               className="w-full object-contain"
             />
@@ -586,7 +591,7 @@ return (
             <div className="aspect-video w-full overflow-hidden rounded-lg bg-black">
                 <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/_fotyamQc6g?si=gJ7kWL9Kss0pkt_k"
+                src="https://www.youtube.com/embed/gdkhMl_-V-Y?si=oWVVlN5IiP88n0wB"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
