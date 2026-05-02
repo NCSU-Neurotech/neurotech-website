@@ -9,8 +9,8 @@ import { Contact } from "./components/Contact";
 import { MeetTheTeam } from "./components/MeetTheTeam";
 import { ClubMeetings } from "./components/ClubMeetings";
 import { Collaborations } from "./components/Collaborations";
-import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
-import { GtecHackathon } from "./components/g-tec-hackathon";
+ // import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
+ // import { GtecHackathon } from "./components/g-tec-hackathon";
 import { SiInstagram, SiDiscord } from "react-icons/si";
 import { Linkedin } from "lucide-react";
 
@@ -42,9 +42,9 @@ export default function App() {
   const renderPage = () => {
     switch (currentPage) {
       case "home":
-        return (
+      return (
           <>
-            {<GtecHackathonBanner onNavigate={handleNavigate} />}
+            {/* <GtecHackathonBanner onNavigate={handleNavigate} /> */}
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -57,9 +57,9 @@ export default function App() {
         return <Mission />;
       case "collaborations":
         return <Collaborations onNavigate={handleNavigate} />;
-      case "collaboration-g-tec-hackathon":
-      case "hackathon":
-        return <GtecHackathon onNavigate={handleNavigate} />;
+      // case "collaboration-g-tec-hackathon":
+      // case "hackathon":
+         //return <GtecHackathon onNavigate={handleNavigate} />;
       case "projects":
         return <Projects onNavigate={handleNavigate} />;
       case "project-arduino-switch":
@@ -105,13 +105,15 @@ export default function App() {
       case "contact":
         return <Contact />;
       default:
-        return (
+      /*  
+      return (
           <>
             {<GtecHackathonBanner onNavigate={handleNavigate} />}
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
         );
+        */
     }
   };
 
