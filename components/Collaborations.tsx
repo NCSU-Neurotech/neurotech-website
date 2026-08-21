@@ -43,7 +43,7 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
     {
       title: "ANT Neuro",
       logo: {
-        src: "/images/collaborations/ant-logo.webp",
+        src: "/images/collaborations/ant-logo-cropped.webp",
         alt: "ANT Neuro logo",
       },
     },
@@ -62,17 +62,17 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
       },
     },
     {
-      title: "IDUN",
-      logo: {
-        src: "/images/collaborations/idun-logo.png", // update path as needed
-        alt: "IDUN Technologies logo",
-      },
-    },
-    {
       title: "Hilltop Home",
       logo: {
         src: "/images/collaborations/hilltop-logo.svg", // update path as needed
         alt: "Hilltop Home logo",
+      },
+    },
+    {
+      title: "IDUN",
+      logo: {
+        src: "/images/collaborations/idun-logo.webp", // update path as needed
+        alt: "IDUN Technologies logo",
       },
     },
   ];
@@ -106,7 +106,7 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
                 <Image
                   src={item.logo.src}
                   alt={item.logo.alt}
-                  className="max-h-24 w-full object-contain"
+                  className={`${item.logo.maxHeightClass ?? "max-h-24"} w-full object-contain`}
                 />
               </div>
             ))}

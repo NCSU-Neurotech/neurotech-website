@@ -9,6 +9,8 @@ import { Contact } from "./components/Contact";
 import { MeetTheTeam } from "./components/MeetTheTeam";
 import { ClubMeetings } from "./components/ClubMeetings";
 import { Collaborations } from "./components/Collaborations";
+import { Events } from "./components/Events";
+import { SpringHackathon2026 } from "./components/events/SpringHackathon2026";
  // import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
  // import { GtecHackathon } from "./components/g-tec-hackathon";
 import { SiInstagram, SiDiscord } from "react-icons/si";
@@ -60,6 +62,10 @@ export default function App() {
       // case "collaboration-g-tec-hackathon":
       // case "hackathon":
          //return <GtecHackathon onNavigate={handleNavigate} />;
+      case "events":
+        return <Events onNavigate={handleNavigate} />;
+      case "event-spring-2026-hackathon":
+        return <SpringHackathon2026 onNavigate={handleNavigate} />;
       case "projects":
         return <Projects onNavigate={handleNavigate} />;
       case "project-arduino-switch":

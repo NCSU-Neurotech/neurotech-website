@@ -41,6 +41,22 @@ export function MeetTheTeam({ onNavigate }: MeetTheTeamProps) {
       linkedin: "will-sammons-7196a42b5/"
     },
     {
+        name: "Emery",
+        role: "Outreach Chair",
+        image: "/images/team/Wemery.jpeg",
+        bio: "Emery is a rising senior in Molecular and Structural Biochemistry and a Caldwell Fellow. As Chair of Operations, he leads outreach and drives the growth of Neurotech, from building partnerships to expanding the club's reach on campus and beyond. He also co-founded the NeuroAccess Alliance, a 501(c)(3) nonprofit focused on making brain-computer interface technology more accessible.",
+        email: "eumeyer@ncsu.edu",
+        linkedin: "emery-meyer-50bb81273"
+    },
+    {
+        name: "Andrew Oliver",
+        role: "Coordination Chair",
+        image: "/images/team/Wandrew.png",
+        bio: "Andrew is a Junior studying integrative physiology and neurobiology. As the coordination chair of Neurotech, he is in charge of aligning the club's operations with our partners and collaborators. He Currently works in the Neuromuscular Rehabilitation Engineering Laboratory (NREL) at NC State, and serves as the schlarship chair for his fraternity. As a co-founder of the NeuroAcces Alliance 501(c)(3), he works to pool talent and funding, aiding the wider neurosciece community.",
+        email: "",
+        linkedin: ""
+    },
+    {
       name: "Dr. Alper Bozkurt",
       role: "Faculty Advisor",
       image: "/images/team/boz.webp",

@@ -80,7 +80,11 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                   setProjectsDropdownOpen(false);
                 }}
                 className={`flex items-center gap-1 text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
-                  currentPage === "about" || currentPage === "team" || currentPage === "mission"
+                  currentPage === "about" ||
+                  currentPage === "team" ||
+                  currentPage === "mission" ||
+                  currentPage === "collaborations" ||
+                  currentPage.startsWith("collaboration-")
                     ? "text-black bg-gray-200/20"
                     : ""
                 }`}
@@ -124,6 +128,18 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                     <div>Mission</div>
                     <p className="text-sm text-muted-foreground">
                       Our goals and vision
+                    </p>
+                  </button>
+                  <button
+                    onClick={() => {
+                      onNavigate("collaborations");
+                      setAboutDropdownOpen(false);
+                    }}
+                    className="block w-full rounded-md px-4 py-3 text-left transition-colors hover:bg-accent"
+                  >
+                    <div>Collaborations</div>
+                    <p className="text-sm text-muted-foreground">
+                      Our partners and sponsors
                     </p>
                   </button>
                 </div>
@@ -181,15 +197,14 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
             </div>
 
             <button
-              onClick={() => onNavigate("collaborations")}
+              onClick={() => onNavigate("events")}
               className={`text-white transition-colors hover:text-black hover:bg-gray-200/20 px-3 py-2 rounded-md ${
-                currentPage === "collaborations" ||
-                currentPage.startsWith("collaboration-")
+                currentPage === "events" || currentPage.startsWith("event-")
                   ? "text-black bg-gray-200/20"
                   : ""
               }`}
             >
-              Collaborations
+              Events
             </button>
 
             <button
@@ -255,17 +270,26 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                   >
                     Mission
                   </button>
+                  <button
+                    onClick={() => {
+                      onNavigate("collaborations");
+                      setMobileMenuOpen(false);
+                    }}
+                    className="text-left text-sm text-white hover:text-black transition-colors"
+                  >
+                    Collaborations
+                  </button>
                 </div>
               </div>
 
               <button
                 onClick={() => {
-                  onNavigate("collaborations");
+                  onNavigate("events");
                   setMobileMenuOpen(false);
                 }}
                 className="text-left text-white hover:text-black transition-colors"
               >
-                Collaborations
+                Events
               </button>
 
               <div>
