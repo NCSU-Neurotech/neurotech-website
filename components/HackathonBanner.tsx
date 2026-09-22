@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
 import { Megaphone, X } from "lucide-react";
 
-interface GtecHackathonBannerProps {
+interface HackathonBannerProps {
   onNavigate: (page: string) => void;
 }
 
-export function GtecHackathonBanner({ onNavigate }: GtecHackathonBannerProps) {
+export function HackathonBanner({ onNavigate }: HackathonBannerProps) {
   const [visible, setVisible] = useState(true);
 
   const dismiss = useCallback(() => {
@@ -25,15 +25,15 @@ export function GtecHackathonBanner({ onNavigate }: GtecHackathonBannerProps) {
         </div>
         <button
           type="button"
-          onClick={() => onNavigate("hackathon")}
+          onClick={() => onNavigate("event-fall-2026-hackathon")}
           className="min-w-0 flex-1 text-left text-sm leading-snug transition-opacity hover:opacity-85 md:text-base"
         >
           <span className="font-bold tracking-tight text-amber-950">
-            Upcoming: g.tec Hackathon
+            Upcoming: Neurotech NCSU Hackathon
           </span>
           <span className="text-gray-800">
             {" "}
-            — April 25–26, 2026 · Tap for details.
+            — Nov 7–8, 2026 · Limited to 100 participants · Tap for details.
           </span>
         </button>
         <button

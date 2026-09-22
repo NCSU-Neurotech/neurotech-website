@@ -75,6 +75,13 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
         alt: "IDUN Technologies logo",
       },
     },
+    {
+        title: "Synaptive",
+        logo: {
+            src: "/images/collaborations/synaptve_logo.jfif",
+            alt: "Synaptive logo",
+        },
+    }
   ];
 
   return (

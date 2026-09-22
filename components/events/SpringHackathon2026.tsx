@@ -1,4 +1,4 @@
-import { ArrowLeft, Trophy, Camera, Youtube, Users, Sparkles } from "lucide-react";
+import { ArrowLeft, Trophy, Camera, Youtube, Users, DollarSign } from "lucide-react";
 import { Image } from "../Image";
 
 interface SpringHackathon2026Props {
@@ -7,7 +7,6 @@ interface SpringHackathon2026Props {
 
 interface Winner {
   place: 1 | 2 | 3;
-  team: string;
   project: string;
   description: string;
   image?: string;
@@ -46,27 +45,25 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
   const summaryStats = [
     { icon: Users, label: "Attendees", value: "42" },
     { icon: Trophy, label: "Teams", value: "8" },
+    { icon: DollarSign, label: "Total Prize Pool", value: "4000" },
   ];
 
   // TODO: fill in real winners once results are finalized.
   const winners: Winner[] = [
     {
       place: 1,
-      team: "Team Name TBA",
-      project: "SSVP Controlled Car",
-      description: "A toy car was controlled using SSVP. Different SSVP frequencies were associated with different directions.",
+      project: "SSEVP Controlled Car",
+      description: "A toy car was controlled using SSEVP. Different SSVEP frequencies were associated with different directions.",
       image: "/images/hackathonSP26/1stplace.JPG",
     },
     {
       place: 2,
-      team: "Team Name TBA",
       project: "Jaw Controlled Robot Sphere",
       description: "A robot sphere was controlled using jaw EEG waves. Differing clenches were used to control rotation and movement.",
       image: "/images/hackathonSP26/2ndplace.JPG",
     },
     {
       place: 3,
-      team: "Team Name TBA",
       project: "Emotion Controlled Music",
       description: "EEG was used to determine emotion while listening to music, and play similar music to what was enjoyed by the user.",
       image: "/images/hackathonSP26/3rdplace.JPG",
@@ -101,6 +98,12 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
       url: "https://hilltophome.org",
       description: "Intermediate care facility",
     },
+    {
+        name: "NCSU Entrepreneurship Department",
+        logo: "/images/collaborations/ncsu-logo.webp",
+        url: "https://entrepreneurship.ncsu.edu/",
+        description: "Innovation and Entrepreneurship at NC State"
+    }
   ];
 
   return (
@@ -134,7 +137,7 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
             make this weekend possible, we can't wait to do it again!
           </p>
 
-          <div className="mt-8 grid grid-cols-2 gap-4">
+          <div className="mt-8 grid grid-cols-3 gap-4">
             {summaryStats.map((stat) => (
               <div
                 key={stat.label}
@@ -166,7 +169,6 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
                     {winner.image ? (
                       <Image
                         src={winner.image}
-                        alt={`${winner.team} project photo`}
                         className="h-full w-full object-cover"
                       />
                     ) : (
@@ -180,7 +182,6 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
                       {style.label}
                     </span>
                     <h3 className="mb-1 font-medium">{winner.project}</h3>
-                    <p className="mb-3 text-sm text-muted-foreground">{winner.team}</p>
                     <p className="text-sm text-muted-foreground">{winner.description}</p>
                   </div>
                 </div>
@@ -193,7 +194,7 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
         <div className="mx-auto mb-16 max-w-5xl">
           <h2 className="mb-2 text-center text-2xl">Photo Gallery</h2>
           <p className="mb-8 text-center text-muted-foreground">
-            Moments from the weekend — more photos coming soon.
+            Moments from the weekend.
           </p>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {photos.map((photo, i) =>
@@ -224,7 +225,7 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
           <p className="mb-8 text-center text-muted-foreground">
             Thank you to our generous sponsors who made this event possible.
           </p>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2">
             {sponsors.map((sponsor) => (
               <a
                 key={sponsor.name}
