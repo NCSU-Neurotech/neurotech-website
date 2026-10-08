@@ -4,19 +4,20 @@ import {
   Mail,
   Newspaper,
   Rocket,
+  Workflow,
 } from "lucide-react";
 
 const MEETING_SLOTS = [
   {
-    day: "Wednesday",
-    time: "7:00 PM – 9:00 PM",
-    venue: "Engineering Building 3, Room 2236",
+    day: "Monday",
+    time: "6:00 PM – 8:00 PM",
+    venue: "Engineering Building 3, Room 2240",
     campus: "Centennial Campus, NC State",
   },
   {
     day: "Friday",
-    time: "4:00 PM – 6:00 PM",
-    venue: "Engineering Building 2, Room 1227",
+    time: "2:00 PM – 4:00 PM",
+    venue: "Engineering Building 3, Room 2220",
     campus: "Centennial Campus, NC State",
   },
 ] as const;
@@ -64,6 +65,36 @@ export function ClubMeetings() {
           <div className="rounded-xl border bg-card p-6 shadow-sm md:flex md:flex-col md:justify-center">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <Workflow className="h-6 w-6" aria-hidden />
+              </div>
+              <div>
+                <h3 className="text-xl">Meeting Flow</h3>
+                <p className="text-sm text-muted-foreground"></p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              {CLUB_FLOW.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex gap-4 rounded-lg border border-border/80 bg-muted/30 px-4 py-3"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <item.icon className="h-5 w-5" aria-hidden />
+                  </div>
+                  <div>
+                    <h4 className="mb-1 font-medium">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          
+
+          <div className="rounded-xl border bg-card p-6 shadow-sm md:flex md:flex-col md:justify-center">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <CalendarClock className="h-6 w-6" aria-hidden />
               </div>
               <div>
@@ -86,26 +117,6 @@ export function ClubMeetings() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm text-muted-foreground">
-             
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {CLUB_FLOW.map((item) => (
-              <div
-                key={item.title}
-                className="flex gap-4 rounded-xl border bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <item.icon className="h-5 w-5" aria-hidden />
-                </div>
-                <div>
-                  <h4 className="mb-1 font-medium">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
 

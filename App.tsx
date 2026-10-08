@@ -9,7 +9,10 @@ import { Contact } from "./components/Contact";
 import { MeetTheTeam } from "./components/MeetTheTeam";
 import { ClubMeetings } from "./components/ClubMeetings";
 import { Collaborations } from "./components/Collaborations";
- // import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
+import { Events } from "./components/Events";
+import { SpringHackathon2026 } from "./components/events/SpringHackathon2026";
+import { FallHackathon2026 } from "./components/events/FallHackathon2026";
+import { HackathonBanner } from "./components/HackathonBanner";
  // import { GtecHackathon } from "./components/g-tec-hackathon";
 import { SiInstagram, SiDiscord } from "react-icons/si";
 import { Linkedin } from "lucide-react";
@@ -44,7 +47,7 @@ export default function App() {
       case "home":
       return (
           <>
-            {/* <GtecHackathonBanner onNavigate={handleNavigate} /> */}
+            <HackathonBanner onNavigate={handleNavigate} />
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
@@ -60,6 +63,13 @@ export default function App() {
       // case "collaboration-g-tec-hackathon":
       // case "hackathon":
          //return <GtecHackathon onNavigate={handleNavigate} />;
+      case "events":
+        return <Events onNavigate={handleNavigate} />;
+      case "event-spring-2026-hackathon":
+        return <SpringHackathon2026 onNavigate={handleNavigate} />;
+      case "event-fall-2026-hackathon":
+      case "hackathon":
+        return <FallHackathon2026 onNavigate={handleNavigate} />;
       case "projects":
         return <Projects onNavigate={handleNavigate} />;
       case "project-arduino-switch":
@@ -108,7 +118,7 @@ export default function App() {
       /*  
       return (
           <>
-            {<GtecHackathonBanner onNavigate={handleNavigate} />}
+            {<HackathonBanner onNavigate={handleNavigate} />}
             <Hero onNavigate={handleNavigate} />
             <ClubMeetings />
           </>
