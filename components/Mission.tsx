@@ -5,27 +5,27 @@ export function Mission() {
   const goals = [
     {
       icon: MessageSquare,
-      title: "Enable Communication",
+      title: "Educate Students",
       description:
-        "Develop assistive technology that gives a voice to children with severe communication disabilities, allowing them to express their needs, feelings, and thoughts.",
+        "Share knowledge about neurotechnology and inspire students to pursue careers in neuroscience, biomedical engineering, and related fields.",
     },
     {
       icon: Zap,
-      title: "Accessible Technology",
+      title: "Advance Innovation",
       description:
-        "Create affordable, easy-to-use solutions that can be widely adopted by families, schools, and healthcare facilities without extensive training or resources.",
+        "Develop cutting-edge neurotechnology solutions through collaborative research and hands-on student projects.",
     },
     {
       icon: HandHelping,
-      title: "Improve Quality of Life",
+      title: "Build Community",
       description:
-        "Enhance the daily lives of not only the children, but their caretakers as well by reducing frustration, improving understanding, and fostering new levels of independence through effective communication.",
+        "Foster collaboration between students, faculty, and industry partners to create a vibrant neurotechnology community in the Research Triangle Park.",
     },
     {
       icon: Globe,
-      title: "Expand Impact",
+      title: "Expand Reach",
       description:
-        "Scale our solutions to reach more children in need, collaborate with other organizations, and share our knowledge to create broader positive change.",
+        "Share our research and knowledge with the broader community through outreach events, workshops, and partnerships.",
     },
   ];
 
@@ -43,9 +43,7 @@ export function Mission() {
           </div>
           <div className="mx-auto h-1 w-24 bg-primary mb-6"></div>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-            Grow neurotech in RTP and empower children with severe mental and physical disabilities by developing 
-            innovative assistive communication technology that bridges the gap between them 
-            and their caretakers, enabling meaningful connections and improved quality of life.
+            Grow neurotech education in the Research Triangle Park and advance innovative neurotechnology research and development through collaborative student projects and community outreach.
           </p>
         </div>
 
@@ -55,20 +53,18 @@ export function Mission() {
               <div className="p-8 md:p-12">
                 <h3 className="mb-6 text-center">What Drives Us</h3>
                 <p className="mb-4 text-muted-foreground">
-                  Every child deserves the ability to communicate. For children with severe disabilities, 
-                  expressing basic needs, emotions, or discomfort can be an insurmountable challenge. 
-                  This communication barrier doesn't just affect the child, it impacts families, caregivers, 
-                  educators, and healthcare providers.
+                  Neurotechnology is one of the most exciting and rapidly evolving fields in science and engineering today.
+                  It has the potential to revolutionize how we understand and interact with the brain, leading to breakthroughs
+                  in medicine, human enhancement, and our understanding of consciousness itself.
                 </p>
                 <p className="mb-4 text-muted-foreground">
-                  At Neurotech at NC State, we believe that technology can break down these barriers. 
-                  Our current focus is on developing specialized Arduino-based switch systems that 
-                  children can activate to trigger commands, enabling them to communicate their needs 
-                  effectively and independently. 
+                  At Neurotech at NC State, we're passionate about introducing students to this field and empowering them to become
+                  the next generation of neurotechnology innovators. Through hands-on projects, research opportunities, and collaborative
+                  learning, we're building the foundation for future breakthroughs.
                 </p>
                 <p className="text-muted-foreground">
-                  By expanding our outreach and encouraging neuro education in the Triangle, we hope to create a community
-                  that is passionate about using technology to make a real difference in the lives of these children and their families.
+                  By expanding our outreach and encouraging neurotechnology education in the Research Triangle Park, we hope to create a community
+                  that is passionate about pushing the boundaries of what's possible in neuroscience and technology.
                 </p>
               </div>
             </div>

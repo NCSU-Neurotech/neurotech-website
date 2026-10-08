@@ -127,8 +127,7 @@ export default function App() {
             <div>
               <h4 className="mb-4 text-white">Neurotech at NC State</h4>
               <p className="mb-4 text-sm text-white/80">
-                Empowering communication through innovative assistive technology
-                for children with disabilities.
+                Educating students about neurotechnology and advancing innovative research in the Research Triangle Park.
               </p>
               <div className="flex gap-4">
                 <a

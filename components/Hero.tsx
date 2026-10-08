@@ -27,8 +27,7 @@ export function Hero({ onNavigate }: HeroProps) {
           </h1>
           
           <p className="mb-8 text-lg md:text-xl text-gray-200">
-            Neurotech at NC State is dedicated to spreading education in RTP and helping severely mentally and physically 
-            disabled children communicate with their caretakers through innovative assistive technology.
+            Neurotech at NC State is dedicated to educating students about neurotechnology and advancing innovative research in the Research Triangle Park area.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

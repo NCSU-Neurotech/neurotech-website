@@ -18,27 +18,43 @@ export function MeetTheTeam({ onNavigate }: MeetTheTeamProps) {
   const teamLeaders: TeamMember[] = [
     {
       name: "Rayan Rao",
-      role: "Cofounder, Co-President, R&D Lead",
+      role: "Applications Chair",
       image: "/images/team/obama.webp",
-      bio: "Rayan is a junior in Biomedical Engineering and the head of the R&D team. He is focusing on developing novel designs for affordable EEG headsets and adaptive switches to implement in Hilltop Home.",
+      bio: "Rayan is a senior in Biomedical Engineering and the head of the R&D team. He is focusing on developing novel designs for affordable EEG headsets and adaptive switches to implement in Hilltop Home.",
       email: "rsrao2@ncsu.edu",
       linkedin: "rayan-rao-4737b421a/"
     },
     {
       name: "Armaan Raina",
-      role: "Cofounder, Co-President, Software Lead",
+      role: "President",
       image: "/images/team/armaani.webp",
-      bio: "Armaan is a junior double majoring in Computer Science and Statistics. He cofounded the club alongside Rayan and Will, mainly focusing on decoding algorithms, general device design, and grant writing.",
+      bio: "Armaan is a senior double majoring in Computer Science and Statistics. He cofounded the club alongside Rayan and Will, mainly focusing on decoding algorithms, general device design, and operational tasks.",
       email: "araina3@ncsu.edu",
       linkedin: "armaanraina/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BoPmmxYDiSDWlojvXTN1tEQ%3D%3D"
     },
     {
       name: "Will Sammons",
-      role: "Cofounder, Treasurer, Hardware Lead",
+      role: "Design Chair",
       image: "/images/team/salmon.webp",
-      bio: "Will is a Junior and is in the Electrical and Computer Engineering Dual Degree program. He is a cofounder and head of hardware for Neurotech, and leads the development and utilization of the technology utilized for the club.",
+      bio: "Will is a 1st year master's student and is in the Electrical and Computer Engineering Dual Degree program. He is a cofounder and head of hardware for Neurotech, and leads the development and utilization of the technology for the club.",
       email: "twsammon@ncsu.edu",
       linkedin: "will-sammons-7196a42b5/"
+    },
+    {
+      name: "Emery Meyer",
+      role: "Outreach Chair",
+      image: "/images/team/Wemery.jpeg",
+      bio: "Emery is a senior in Molecular and Structural Biochemistry and a Caldwell Fellow. As Chair of Operations, he leads outreach and drives the growth of Neurotech, from building partnerships to expanding the club’s reach on campus and beyond. He also co-founded the NeuroAccess Alliance, a 501(c)(3) nonprofit focused on making brain-computer interface technology more accessible.",
+      email: "eumeyer@ncsu.edu",
+      linkedin: "emery-meyer-50bb81273/"
+    },
+    {
+      name: "Andrew Oliver",
+      role: "Coordination Chair",
+      image: "/images/team/Wandrew.png",
+      bio: "Andrew is a Junior studying integrative physiology and neurobiology. As the coordination chair of Neurotech, he is in charge of aligning the club's operations with our partners and collaborators. He currently works in the Neuromuscular Rehabilitation Engineering Laboratory (NREL) at NC State, and serves as the scholarship chair for his fraternity. As a co-founder of the NeuroAccess Alliance 501(c)(3), he works to pool talent and funding, aiding the wider neuroscience community.",
+      email: "alolive3@ncsu.edu",
+      linkedin: "andrew-oliver-951666271/"
     },
     {
       name: "Dr. Alper Bozkurt",
