@@ -14,7 +14,7 @@ const UPCOMING_EVENTS = [
     image: "/images/hackathonFA26/Fall-Hack-26.png",
     status: "Registration Open",
     date: "November 7 – 8, 2026",
-    location: "NC State, Raleigh, NC · Exact location TBA",
+    location: "Engineering Building 3 · NC State, Raleigh, NC",
   },
 ] as const;
 
@@ -24,7 +24,7 @@ const PAST_EVENTS = [
     title: "BR41N.IO Hackathon — Spring School 2026",
     description:
       "Our local NC State chapter of the BR41N.IO Spring School 2026 hackathon, hosted in partnership with g.tec medical engineering — a weekend of building, learning, and innovation at the intersection of neurotechnology and engineering.",
-    image: "/images/collaborations/actual_actual_hackathon_poster.PNG",
+    image: "/images/collaborations/actual_actual_hackathon_poster.png",
     status: "Past Event",
     date: "April 25 – 26, 2026",
     location: "Albright Entrepreneurship Garage, Raleigh, NC",

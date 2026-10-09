@@ -52,8 +52,8 @@ export function SpringHackathon2026({ onNavigate }: SpringHackathon2026Props) {
   const winners: Winner[] = [
     {
       place: 1,
-      project: "SSEVP Controlled Car",
-      description: "A toy car was controlled using SSEVP. Different SSVEP frequencies were associated with different directions.",
+      project: "SSVEP Controlled Car",
+      description: "A toy car was controlled using SSVEP. Different SSVEP frequencies were associated with different directions.",
       image: "/images/hackathonSP26/1stplace.JPG",
     },
     {

@@ -197,20 +197,20 @@ export function Contact() {
                 <div className="space-y-4 text-sm">
                   <div className="rounded-lg border border-border/80 bg-muted/30 px-4 py-3">
                     <div className="flex justify-between gap-2">
-                      <span className="font-medium">Wednesday</span>
-                      <span className="shrink-0 text-muted-foreground">7PM – 9PM</span>
+                      <span className="font-medium">Monday</span>
+                      <span className="shrink-0 text-muted-foreground">6PM – 8PM</span>
                     </div>
                     <p className="mt-1 text-muted-foreground">
-                      Engineering Building 3, Room 2236 · Centennial Campus, NC State
+                      Engineering Building 3, Room 2240 · Centennial Campus, NC State
                     </p>
                   </div>
                   <div className="rounded-lg border border-border/80 bg-muted/30 px-4 py-3">
                     <div className="flex justify-between gap-2">
                       <span className="font-medium">Friday</span>
-                      <span className="shrink-0 text-muted-foreground">4PM – 6PM</span>
+                      <span className="shrink-0 text-muted-foreground">2PM – 4PM</span>
                     </div>
                     <p className="mt-1 text-muted-foreground">
-                      Engineering Building 2, Room 1227 · Centennial Campus, NC State
+                      Engineering Building 3, Room 2220 · Centennial Campus, NC State
                     </p>
                   </div>
                 </div>

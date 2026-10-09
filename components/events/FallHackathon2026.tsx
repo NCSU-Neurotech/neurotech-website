@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, Clock, Users, Utensils, Brain, ClipboardList, ArrowRight, MapPin, CalendarClock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Users, Utensils, Brain, ClipboardList, ArrowRight, MapPin, CalendarClock, DollarSign } from "lucide-react";
 import { Image } from "../Image";
 
 interface FallHackathon2026Props {
@@ -9,9 +9,9 @@ const REGISTRATION_URL = "https://forms.gle/KGfL9VwsXpeescR27";
 
 export function FallHackathon2026({ onNavigate }: FallHackathon2026Props) {
   const details = [
-    { icon: Calendar, label: "When", value: "Nov 7 – Nov 8, 2026" },
-    { icon: Clock, label: "Hours", value: "Sat 9:00 AM → Sun 2:00 PM" },
-    { icon: MapPin, label: "Where", value: "NC State, Raleigh, NC · Exact location to be announced" },
+    { icon: Calendar, label: "When", value: "9:00 AM Sat Nov 7 – 2:00 PM Sun Nov 8, 2026" },
+    { icon: MapPin, label: "Where", value: "Engineering Building 3, NCSU Centennial Campus" },
+    { icon: DollarSign, label: "Prize Pool", value: "$2,000"},
     { icon: Users, label: "Capacity", value: "Limited to 100 participants" },
   ];
 
@@ -35,11 +35,16 @@ export function FallHackathon2026({ onNavigate }: FallHackathon2026Props) {
 
   const sponsors = [
     {
-      name: "IDUN Technologies",
-      logo: "/images/collaborations/idun-logo.webp",
-      url: "https://iduntechnologies.com",
-      description: "Providing the EEG headsets participants will use throughout the hackathon.",
+      name: "NCSU Entrepreneurship Department",
+      logo: "/images/collaborations/ncsu-logo.webp",
+      url: "https://entrepreneurship.ncsu.edu/",
     },
+    {
+        name: "ANT Neuro",
+        logo: "/images/collaborations/ant-logo-cropped.webp",
+        url: "https://www.ant-neuro.com/",
+    },
+    
   ];
 
   return (
@@ -61,8 +66,7 @@ export function FallHackathon2026({ onNavigate }: FallHackathon2026Props) {
           <h1 className="mb-4 text-4xl md:text-5xl">Neurotech NCSU Hackathon</h1>
           <div className="mx-auto mb-6 h-1 w-24 bg-primary" />
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Hands-on with real EEG headsets and live brain data using headsets provided by
-            IDUN Technologies.
+            Hands-on with real EEG headsets and live brain data using headsets.
           </p>
         </div>
 
@@ -131,14 +135,14 @@ export function FallHackathon2026({ onNavigate }: FallHackathon2026Props) {
         {/* Sponsors */}
         <div className="mx-auto mb-16 max-w-4xl">
           <h2 className="mb-3 text-center text-xl">Sponsored By</h2>
-          <div className="flex justify-center">
+          <div className="grid gap-6 sm:grid-cols-2 place-items-stretch">
             {sponsors.map((sponsor) => (
               <a
                 key={sponsor.name}
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex max-w-sm flex-col items-center rounded-xl border bg-card p-8 shadow-sm transition-shadow hover:shadow-md"
+                className="group flex flex-col items-center rounded-xl border bg-card p-8 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="mb-4 flex h-20 w-full items-center justify-center">
                   <Image
@@ -167,8 +171,7 @@ export function FallHackathon2026({ onNavigate }: FallHackathon2026Props) {
         </div>
 
         <p className="text-center text-muted-foreground">
-          Details on the exact location and a full schedule are coming soon. Check back here
-          for updates.
+          Details on the full schedule are coming soon. Check back here for updates.
         </p>
       </div>
     </section>

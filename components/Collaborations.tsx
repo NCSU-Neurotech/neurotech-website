@@ -81,7 +81,15 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
             src: "/images/collaborations/synaptve_logo.jfif",
             alt: "Synaptive logo",
         },
+    },
+    {
+        title: "NCSU Entrepreneurship",
+        logo: {
+            src: "/images/collaborations/ncsu-logo.webp",
+            alt: "NCSU logo",
+        },
     }
+    
   ];
 
   return (
