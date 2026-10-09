@@ -6,12 +6,12 @@ export function AboutUs() {
     {
       icon: Heart,
       title: "Compassion",
-      description: "We are driven by empathy for those who face communication barriers.",
+      description: "We welcome students of every background and want neurotechnology to be accessible to everyone curious about it.",
     },
     {
       icon: Lightbulb,
-      title: "Innovation",
-      description: "We leverage cutting-edge technology to create meaningful solutions.",
+      title: "Education",
+      description: "We make learning neurotechnology hands-on, approachable, and exciting.",
     },
     {
       icon: Users,
@@ -21,7 +21,7 @@ export function AboutUs() {
     {
       icon: Target,
       title: "Impact",
-      description: "We measure success by the lives we improve and the barriers we break.",
+      description: "We measure success by the students we inspire and the community we grow around neurotechnology.",
     },
   ];
 
@@ -46,12 +46,12 @@ export function AboutUs() {
             <h3 className="mb-6">Who We Are</h3>
             <p className="mb-4 text-muted-foreground">
               Neurotech at NC State is a student-led organization dedicated to spreading neurotechnology education throughout
-              the Research Triangle Park area and advancing innovative research in the field of neurotechnology.
+              the Research Triangle Park area and building interest in the field through workshops, hackathons, and student projects.
             </p>
             <p className="mb-4 text-muted-foreground">
               Our team consists of passionate students from various disciplines including engineering, 
               computer science, industrial design, and business. Together, we combine our diverse skills and 
-              knowledge to create innovative solutions that make a real difference in people's lives.
+              knowledge to teach, build, and share neurotechnology with the wider community.
             </p>
 
             <div className="grid gap-6 sm:grid-cols-2">

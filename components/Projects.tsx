@@ -64,8 +64,8 @@ export function Projects({ onNavigate }: ProjectsProps) {
           <h2 className="mb-4 text-3xl md:text-4xl">Our Projects</h2>
           <div className="mx-auto h-1 w-24 bg-primary mb-6"></div>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Explore our innovative assistive technology projects designed to empower 
-            children with disabilities and enhance their communication abilities.
+            Explore the hands-on neurotechnology projects our members build to learn,
+            experiment, and share the field with others.
           </p>
         </div>
 

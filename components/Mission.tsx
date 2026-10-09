@@ -11,9 +11,9 @@ export function Mission() {
     },
     {
       icon: Zap,
-      title: "Advance Innovation",
+      title: "Inspire Interest",
       description:
-        "Develop cutting-edge neurotechnology solutions through collaborative research and hands-on student projects.",
+        "Spark interest in neurotechnology through hands-on student projects, workshops, and hackathons.",
     },
     {
       icon: HandHelping,
@@ -43,7 +43,7 @@ export function Mission() {
           </div>
           <div className="mx-auto h-1 w-24 bg-primary mb-6"></div>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-            Grow neurotech education in the Research Triangle Park and advance innovative neurotechnology research and development through collaborative student projects and community outreach.
+            Spread neurotechnology education and interest throughout the Research Triangle Park through hands-on student projects, hackathons, and community outreach.
           </p>
         </div>
 

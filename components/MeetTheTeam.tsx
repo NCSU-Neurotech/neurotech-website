@@ -73,9 +73,9 @@ export function MeetTheTeam({ onNavigate }: MeetTheTeamProps) {
           <h2 className="mb-4 text-3xl md:text-4xl">Meet the Team</h2>
           <div className="mx-auto h-1 w-24 bg-primary mb-6"></div>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Our team consists of passionate students and faculty dedicated to 
-            developing assistive technology solutions that make a real difference 
-            in people's lives.
+            Our team consists of passionate students and faculty dedicated to
+            spreading neurotechnology education and interest across the
+            Research Triangle Park.
           </p>
         </div>
 

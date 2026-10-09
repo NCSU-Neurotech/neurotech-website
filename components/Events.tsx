@@ -24,7 +24,7 @@ const PAST_EVENTS = [
     title: "BR41N.IO Hackathon — Spring School 2026",
     description:
       "Our local NC State chapter of the BR41N.IO Spring School 2026 hackathon, hosted in partnership with g.tec medical engineering — a weekend of building, learning, and innovation at the intersection of neurotechnology and engineering.",
-    image: "/images/collaborations/actual_actual_hackathon_poster.png",
+    image: "/images/collaborations/actual_actual_hackathon_poster.PNG",
     status: "Past Event",
     date: "April 25 – 26, 2026",
     location: "Albright Entrepreneurship Garage, Raleigh, NC",

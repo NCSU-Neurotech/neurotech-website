@@ -44,7 +44,16 @@ export function FallHackathon2026({ onNavigate }: FallHackathon2026Props) {
         logo: "/images/collaborations/ant-logo-cropped.webp",
         url: "https://www.ant-neuro.com/",
     },
-    
+    {
+        name: "NeuroPawn",
+        logo: "/images/collaborations/neuropawn-logo.png",
+        url: "https://www.neuropawn.tech",
+    },
+    {
+        name: "Brain Vision",
+        logo: "/images/collaborations/brainvision-logo.jfif",
+        url: "https://www.brainvision.com",
+    },
   ];
 
   return (

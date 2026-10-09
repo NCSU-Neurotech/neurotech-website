@@ -10,7 +10,7 @@ export function Hero({ onNavigate }: HeroProps) {
       <div className="absolute inset-0 opacity-20">
         <Image
           src="/images/hero/team.webp"
-          alt="Children learning with technology"
+          alt="Neurotech at NC State team"
           className="h-full w-full object-cover"
           fallbackSrc="https://images.unsplash.com/photo-1759646827278-27c5733e0cee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGxlYXJuaW5nJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NjM1NTIyMzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
         />
@@ -23,11 +23,11 @@ export function Hero({ onNavigate }: HeroProps) {
           </div>
           
           <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl">
-            "Empowering Communication Through Technology"
+            "Spreading Neurotechnology Education and Interest"
           </h1>
           
           <p className="mb-8 text-lg md:text-xl text-gray-200">
-            Neurotech at NC State is dedicated to educating students about neurotechnology and advancing innovative research in the Research Triangle Park area.
+            Neurotech at NC State is dedicated to educating students about neurotechnology and growing interest in the field across the Research Triangle Park area through hands-on projects, hackathons, and community outreach.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

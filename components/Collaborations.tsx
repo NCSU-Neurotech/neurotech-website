@@ -17,25 +17,25 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
       icon: FlaskConical,
       title: "Research & labs",
       description:
-        "Partner with us on assistive technology research, capstone projects, or shared instrumentation. We welcome faculty, graduate students, and interdisciplinary teams aligned with our mission.",
+        "Partner with us on neurotechnology education, research, capstone projects, or shared instrumentation. We welcome faculty, graduate students, and interdisciplinary teams aligned with our mission.",
     },
     {
       icon: Building2,
       title: "Industry & sponsors",
       description:
-        "Sponsor hardware, software, or events; mentor student teams; or explore pilots that bring neurotech and accessibility expertise to real-world products and services.",
+        "Sponsor hardware, software, or events; mentor student teams; or help us introduce students to real-world neurotechnology tools and careers.",
     },
     {
       icon: HeartHandshake,
       title: "Community organizations",
       description:
-        "Schools, clinics, and nonprofits can collaborate on user feedback, field testing, and outreach so our devices and programs meet the people they are meant to serve.",
+        "Schools, clinics, and nonprofits can collaborate on workshops, demos, and outreach that bring neurotechnology to the wider community.",
     },
     {
       icon: Users,
       title: "Student organizations",
       description:
-        "We love working with other clubs and chapters on joint workshops, hackathons, and awareness campaigns that grow the neurotech and accessibility community at NC State.",
+        "We love working with other clubs and chapters on joint workshops, hackathons, and awareness campaigns that grow the neurotech community at NC State.",
     },
   ];
 
@@ -81,6 +81,13 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
             src: "/images/collaborations/synaptve_logo.jfif",
             alt: "Synaptive logo",
         },
+    },
+    {
+      title: "BrainVision",
+      logo: {
+        src: "/images/collaborations/brainvision-logo.png",
+        alt: "BrainVision logo",
+      },
     },
     {
         title: "NCSU Entrepreneurship",
@@ -134,14 +141,14 @@ export function Collaborations({ onNavigate }: CollaborationsProps) {
               <div className="p-8 md:p-12">
                 <h3 className="mb-6 text-center">Why Work With Us</h3>
                 <p className="mb-4 text-muted-foreground">
-                  Neurotech at NC State is a student-led organization focused on education and
-                  practical assistive devices for children with severe communication challenges.
-                  Collaboration helps us continue to grow interest in neurotech, expand our impact,
-                  and create high quality solutions that meet real needs.
+                  Neurotech at NC State is a student-led organization focused on spreading
+                  neurotechnology education and interest across the Research Triangle Park.
+                  Collaboration helps us continue to grow interest in neurotech, expand our reach,
+                  and give students hands-on experience with the field.
                 </p>
                 <p className="text-muted-foreground">
                   Whether you bring technical skills, funding, user connections, or simply a
-                  shared commitment to accessibility, we are excited to explore how we can work
+                  shared passion for neurotechnology, we are excited to explore how we can work
                   together.
                 </p>
               </div>
