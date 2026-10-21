@@ -1,216 +1,40 @@
-import { useState, useEffect } from "react";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { AboutUs } from "./components/AboutUs";
-import { Mission } from "./components/Mission";
-import { Projects } from "./components/Projects";
-import { ProjectDetail } from "./components/ProjectDetail";
+import { Router } from "./router";
+import { Footer, Header } from "./components/parts";
+import { Home } from "./components/Home";
+import { Collaborators, Mission, Team } from "./components/About";
+import { EventDetail, Events, NotFound, ProjectDetail, Projects } from "./components/Listings";
 import { Contact } from "./components/Contact";
-import { Donate } from "./components/Donate";
-import { Donors } from "./components/Donors";
-import { MeetTheTeam } from "./components/MeetTheTeam";
-import { ClubMeetings } from "./components/ClubMeetings";
-import { Collaborations } from "./components/Collaborations";
-import { CollaborationDetail } from "./components/CollaborationDetail";
-import { GtecHackathonBanner } from "./components/GtecHackathonBanner";
+
+function renderPage(page: string) {
+  if (page === "home") return <Home />;
+  if (page === "mission") return <Mission />;
+  if (page === "team") return <Team />;
+  if (page === "collaborators") return <Collaborators />;
+  if (page === "projects") return <Projects />;
+  if (page === "events") return <Events />;
+  if (page === "contact") return <Contact />;
+  if (page.startsWith("project-")) return <ProjectDetail key={page} id={page.slice(8)} />;
+  if (page.startsWith("event-")) return <EventDetail key={page} id={page.slice(6)} />;
+  return <NotFound />;
+}
+
+const navSection = (page: string) => {
+  if (["mission", "team", "collaborators"].includes(page)) return "about";
+  if (page.startsWith("project")) return "projects";
+  if (page.startsWith("event")) return "events";
+  return page;
+};
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState(() => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("page") || "home";
-  });
-
-  useEffect(() => {
-    const handlePopState = () => {
-      const params = new URLSearchParams(window.location.search);
-      setCurrentPage(params.get("page") || "home");
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
-
-  const handleNavigate = (page: string) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    const newUrl = new URL(window.location.href);
-    newUrl.searchParams.set("page", page);
-    window.history.pushState({}, "", newUrl);
-  };
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return (
-          <>
-            <GtecHackathonBanner onNavigate={handleNavigate} />
-            <Hero onNavigate={handleNavigate} />
-            <ClubMeetings />
-          </>
-        );
-      case "about":
-        return <AboutUs />;
-      case "team":
-        return <MeetTheTeam />;
-      case "mission":
-        return <Mission />;
-      case "collaborations":
-        return <Collaborations onNavigate={handleNavigate} />;
-      case "collaboration-ant-neuro":
-        return (
-          <CollaborationDetail
-            key="ant-neuro"
-            collaborationId="ant-neuro"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "collaboration-g-tec-hackathon":
-        return (
-          <CollaborationDetail
-            key="g-tec-hackathon"
-            collaborationId="g-tec-hackathon"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "collaboration-neuropawn":
-        return (
-          <CollaborationDetail
-            key="neuropawn"
-            collaborationId="neuropawn"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "collaboration-idun":
-        return (
-          <CollaborationDetail
-            key="idun"
-            collaborationId="idun"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "projects":
-        return <Projects onNavigate={handleNavigate} />;
-      case "project-arduino-switch":
-        return (
-          <ProjectDetail
-            key="arduino-switch"
-            projectId="arduino-switch"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "project-eeg-headset":
-        return (
-          <ProjectDetail 
-          key="eeg-headset"
-          projectId="eeg-headset" 
-          onNavigate={handleNavigate} />
-        );
-      case "project-epilepsy-decoder":
-        return (
-          <ProjectDetail
-            key="epilepsy-decoder"
-            projectId="epilepsy-decoder"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "project-eeg-decoder":
-        return (
-          <ProjectDetail
-            key="eeg-decoder"
-            projectId="eeg-decoder"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "project-neural-3d-model":
-        return (
-          <ProjectDetail
-            key="neural-3d-model"
-            projectId="neural-3d-model"
-            onNavigate={handleNavigate}
-          />
-        );
-      case "contact":
-        return <Contact />;
-      case "donate":
-        return <Donate onNavigate={handleNavigate} />;
-      case "donors":
-        return <Donors onNavigate={handleNavigate} />;
-      default:
-        return (
-          <>
-            <GtecHackathonBanner onNavigate={handleNavigate} />
-            <Hero onNavigate={handleNavigate} />
-            <ClubMeetings />
-          </>
-        );
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-background">
-      <Header onNavigate={handleNavigate} currentPage={currentPage} />
-      <main>{renderPage()}</main>
-      <footer className="border-t bg-secondary text-secondary-foreground">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div>
-              <h4 className="mb-4 text-white">Neurotech at NC State</h4>
-              <p className="text-sm text-white/80">
-                Empowering communication through innovative assistive technology
-                for children with disabilities.
-              </p>
-            </div>
-            <div>
-              <h4 className="mb-4 text-white">Quick Links</h4>
-              <div className="flex flex-col gap-2 text-sm">
-                <button
-                  onClick={() => handleNavigate("about")}
-                  className="text-left text-white/80 hover:text-white transition-colors"
-                >
-                  About Us
-                </button>
-                <button
-                  onClick={() => handleNavigate("projects")}
-                  className="text-left text-white/80 hover:text-white transition-colors"
-                >
-                  Projects
-                </button>
-                <button
-                  onClick={() => handleNavigate("collaborations")}
-                  className="text-left text-white/80 hover:text-white transition-colors"
-                >
-                  Collaborations
-                </button>
-                <button
-                  onClick={() => handleNavigate("contact")}
-                  className="text-left text-white/80 hover:text-white transition-colors"
-                >
-                  Contact
-                </button>
-                <button
-                  onClick={() => handleNavigate("donate")}
-                  className="text-left text-white/80 hover:text-white transition-colors"
-                >
-                  Donate
-                </button>
-              </div>
-            </div>
-            <div>
-              <h4 className="mb-4 text-white">Contact</h4>
-              <div className="text-sm text-white/80">
-                <p>North Carolina State University</p>
-                <p>Raleigh, NC</p>
-                <p className="mt-2">neurotech-org@ncsu.edu</p>
-                <p>(919)-437-1380</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 border-t border-white/20 pt-8 text-center text-sm text-white/60">
-            <p>© 2025 Neurotech at NC State. All rights reserved.</p>
-          </div>
+    <Router>
+      {(page) => (
+        <div className="page">
+          <Header current={navSection(page)} />
+          <main>{renderPage(page)}</main>
+          <Footer />
         </div>
-      </footer>
-    </div>
+      )}
+    </Router>
   );
 }
