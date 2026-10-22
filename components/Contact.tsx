@@ -88,7 +88,7 @@ export function Contact() {
           <div className="t">
             <span className="num">02</span>
             <h2>Join the mailing list</h2>
-            <p>Meeting reminders, hackathon announcements and project openings.</p>
+            <p>Meeting reminders, announcements, and more!</p>
           </div>
           <a className="btn-r" href={mailingListHref}>Join the Mailing List <IconUpRight /></a>
         </div>

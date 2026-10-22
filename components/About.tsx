@@ -100,10 +100,19 @@ export function Collaborators() {
           <div>
             {collaborators.map((c) => (
               <div className="row" key={c.name}>
-                <div className="logo-cell">
-                  {c.logo ? <img src={c.logo} alt={`${c.name} logo`} loading="lazy" /> : <span className="eyebrow">Logo</span>}
-                </div>
-                <span className="nm">{c.name}</span>
+                {c.href ? (
+                  <>
+                    <a className="logo-cell" href={c.href} target="_blank" rel="noopener noreferrer" aria-label={`${c.name} website`} tabIndex={-1}>
+                      <img src={c.logo} alt={`${c.name} logo`} />
+                    </a>
+                    <span className="nm"><a className="nm-link" href={c.href} target="_blank" rel="noopener noreferrer">{c.name}</a></span>
+                  </>
+                ) : (
+                  <>
+                    <div className="logo-cell"><span className="eyebrow">Logo</span></div>
+                    <span className="nm">{c.name}</span>
+                  </>
+                )}
                 <span className="kind">{c.kind}</span>
                 <span className="note">{c.note}</span>
               </div>

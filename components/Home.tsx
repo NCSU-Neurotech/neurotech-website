@@ -38,7 +38,7 @@ const pillars = [
 const perks = [
   ["Meeting reminders", "Times, rooms and what we're working on."],
   ["Hackathon announcements", "First word on dates and registration."],
-  ["Project openings", "Ways to join a build team."],
+  ["Neuro Snippet", "The fun neuroscience topic of the week."],
 ];
 
 export function Home() {

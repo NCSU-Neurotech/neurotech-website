@@ -250,7 +250,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .ftr-in { display: flex; flex-direction: column; gap: 56px; }
 .ftr-big { font-size: clamp(44px, 8vw, 104px); line-height: 1.1; letter-spacing: -0.025em; }
 .ftr-big span { color: var(--red); }
-.ftr nav { display: flex; flex-wrap: wrap; gap: 40px 64px; }
+.ftr nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px 64px; }
 .ftr-col { display: flex; flex-direction: column; gap: 2px; min-width: 140px; }
 .ftr-col .eyebrow { color: rgba(255, 255, 255, 0.5); padding-bottom: 12px; }
 .ftr-col a.eyebrow { text-decoration: none; }
@@ -292,3 +292,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .contact-block form > .field { flex: 0 0 auto; }
 .mission-split { display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; }
 .mission-split .lede-big { flex: 1 1 400px; min-width: 0; font-size: clamp(26px, 3vw, 42px); }
+a.nm-link { color: inherit; text-decoration: none; background: linear-gradient(var(--red), var(--red)) no-repeat 0 100% / 0% 2px; transition: background-size 0.3s var(--ease), color 0.15s; }
+a.nm-link:hover { color: var(--red); background-size: 100% 2px; }
+a.logo-cell { transition: border-color 0.15s; }
+a.logo-cell:hover { border-color: var(--red); }
+.ev-label { padding-bottom: 24px; }
+.ev-past { margin-top: 96px; border-top: 4px solid #000; padding-top: 32px; }
+.ev-past .ev-label { color: var(--ink); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
