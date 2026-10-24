@@ -78,14 +78,16 @@ export function Home() {
       <section>
         <div className="wrap sec-pad">
           <div className="eyebrow" style={{ paddingBottom: 24 }}>Three pillars</div>
-          {pillars.map((p, i) => (
-            <Link key={p.n} className={`rowl${i === pillars.length - 1 ? " last" : ""}`} to={p.to}>
-              <span className="n num">{p.n}</span>
-              <span className="t">{p.t}</span>
-              <span className="d">{p.d}</span>
-              <span className="a">→</span>
-            </Link>
-          ))}
+          <div className="pillar-cols">
+            {pillars.map((p) => (
+              <Link key={p.n} className="pillar-col" to={p.to}>
+                <span className="n num">{p.n}</span>
+                <span className="t">{p.t}</span>
+                <span className="d">{p.d}</span>
+                <span className="a">→</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -121,7 +123,7 @@ export function Home() {
                 </div>
               ))}
             </div>
-            <a className="btn-r" style={{ alignSelf: "flex-start" }} href={mailingListHref}>Join the Mailing List <IconUpRight /></a>
+            <a className="btn-r" style={{ alignSelf: "flex-start" }} href={mailingListHref} target="_blank" rel="noopener noreferrer">Join the Mailing List <IconUpRight /></a>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 export const EMAIL = "neurotech-org@ncsu.edu";
 
 export const mailingListHref =
-  "mailto:neurotech-org@ncsu.edu?subject=Join%20the%20Neurotech%20mailing%20list&body=Hi!%20Please%20add%20me%20to%20the%20club%20mailing%20list.%0A%0AMy%20name%3A%20%0AMy%20NCSU%20email%20(if%20applicable)%3A%20%0A";
+  "https://docs.google.com/forms/d/e/1FAIpQLScnaXyUwomTewNEz4ICqiH-6BddPI9zJFx6KPWanWD3fPyiTg/viewform?usp=dialog";
 
 export const socials = [
   { name: "LinkedIn", href: "https://www.linkedin.com/company/neurotechatncsu/" },
@@ -10,8 +10,8 @@ export const socials = [
 ];
 
 export const meetings = [
-  { day: "Wednesday", time: "7:00 – 9:00 PM", where: "Engineering Building 3, Room 2236 · Centennial Campus" },
-  { day: "Friday", time: "4:00 – 6:00 PM", where: "Engineering Building 2, Room 1227 · Centennial Campus" },
+  { day: "Wednesday", time: "6:00 – 8:00 PM", where: "Engineering Building 3, Room 2240 · Centennial Campus" },
+  { day: "Friday", time: "2:00 – 4:00 PM", where: "Engineering Building 3, Room 2220 · Centennial Campus" },
 ];
 
 export interface Person {
@@ -76,42 +76,48 @@ export const collaborators = [
     href: "https://www.ant-neuro.com/",
     kind: "Company",
     logo: "/images/ant-visit/ant-logo.webp",
-    note: "Visited on April 1, 2026 for a hands-on demo of more than $50,000 of professional EEG hardware.",
   },
   {
     name: "g.tec",
     href: "https://www.gtec.at/",
     kind: "Company",
     logo: "/images/collaborations/g-tec-logo.svg",
-    note: "Biosignal and BCI company that partnered with us to host our spring hackathon.",
   },
   {
     name: "NeuroPawn",
     href: "https://www.neuropawn.tech/",
     kind: "Hardware support",
     logo: "/images/collaborations/neuropawn-logo.png",
-    note: "Provided hardware that supports our projects and experiments.",
   },
   {
     name: "IDUN Technologies",
     href: "https://iduntechnologies.com/",
     kind: "Hardware support",
     logo: "/images/collaborations/idun-logo.png",
-    note: "Provided hardware that supports our projects and experiments.",
   },
   {
     name: "Hilltop Home",
     href: "https://hilltophome.org",
     kind: "Community partner",
     logo: "/images/collaborations/hilltop-logo.webp",
-    note: "The children and caregivers who test our assistive communication devices and shape what we build.",
   },
   {
     name: "Synaptive",
     href: "https://synaptiveltd.co.uk",
     kind: "Research partner",
     logo: "/images/collaborations/synaptive_logo.jfif",
-    note: "Provided hardware for research and projects.",
+  },
+  {
+    name: "NCSU Entrepreneurship Department",
+    href: "https://entrepreneurship.ncsu.edu",
+    kind: "University partner",
+    logo: "/images/collaborations/ncsu_logo.webp",
+  },
+  {
+    name: "Brain Vision",
+    href: "https://brainvision.com",
+    kind: "Company",
+    logo: "/images/collaborations/brainvision_logo.jfif",
   },
 ];
 
@@ -176,7 +182,6 @@ export const projects: Project[] = [
     id: "eeg-visualizer",
     title: "EEG Visualizer",
     summary: "Live visualization of brain signals recorded with EEG.",
-    image: "/images/ant-visit/eeg-output-demo.jpg",
     overview:
       "The EEG Visualizer team is building software that turns raw EEG recordings into something you can see and explore in real time. Full details will be posted here soon.",
   },
@@ -192,7 +197,11 @@ export interface EventInfo {
   day: string;
   when: string;
   who: string;
+  /** Venue shown under "Who can attend"; leave undefined to hide the row. */
+  where?: string;
   image?: string;
+  /** Show `image` uncropped at its natural aspect ratio (for posters) instead of a cropped banner. */
+  imageFull?: boolean;
   about: string;
   rowNote: string;
   /** When set, the event page shows a "Sign Up" button linking here instead of "Request Details". */
@@ -201,6 +210,10 @@ export interface EventInfo {
   schedule?: { time: string; title: string; note?: string }[];
   /** Photos from the event, e.g. { src: "/images/events/fall-hackathon/1.jpg", alt: "..." }; `[]` shows placeholders. */
   gallery?: { src: string; alt: string }[];
+  /** Sponsors, e.g. { name: "g.tec", href: "https://www.gtec.at/", logo: "/images/collaborations/g-tec-logo.svg" }; `[]` shows a "become a sponsor" prompt, leave undefined to hide it. */
+  sponsors?: { name: string; href?: string; logo?: string }[];
+  /** Info cards shown beside the "About this event" text, e.g. { label: "Prize pool", value: "$1,000", note: "Across the top three teams" }. */
+  stats?: { label: string; value: string; note?: string }[];
 }
 
 export const events: EventInfo[] = [
@@ -212,32 +225,68 @@ export const events: EventInfo[] = [
     month: "Nov 2026",
     day: "7–8",
     when: "November 7–8, 2026",
-    who: "Limited to 100 participants",
-    image: "/images/hero/team.webp",
+    who: "Open to all, Limited to 100 participants",
+    where: "Engineering Building 3, Centennial Campus, NC State University",
+    image: "/images/fall-hackathon/poster.webp",
+    imageFull: true,
     about:
       "Two days of building, learning and collaboration around biosignals, brain-computer interfaces and neurotechnology. Whether you are new to EEG or already experimenting with decoders and interfaces, it is a chance to meet peers, work on projects and learn from mentors.",
     rowNote: "Neurotech at NCSU Hackathon · Limited to 100 participants",
     signupHref:
-      "mailto:neurotech-org@ncsu.edu?subject=Fall%20Hackathon%20sign%20up&body=Hi!%20I%27d%20like%20to%20sign%20up%20for%20the%20Fall%20Hackathon.%0A%0AMy%20name%3A%20%0AMy%20NCSU%20email%3A%20%0AMajor%20and%20year%3A%20",
+      "https://docs.google.com/forms/d/e/1FAIpQLSfCnI8rzSDeDh-FJGuLkuV6yd-MKSro8X15SfhOMApO-3LrLg/viewform?usp=dialog",
     schedule: [],
     gallery: [],
+    stats: [
+      { label: "Attendees", value: "Up to 100", note: "Open to every major" },
+      { label: "Teams", value: "TBA", note: "Team formation details coming soon" },
+      { label: "Prize pool", value: "TBA", note: "To be announced" },
+    ],
+    sponsors: [
+      { name: "ANT Neuro", href: "https://www.ant-neuro.com/", logo: "/images/ant-visit/ant-logo.webp" },
+      { name: "NeuroPawn", href: "https://www.neuropawn.tech/", logo: "/images/collaborations/neuropawn-logo.png" },
+      { name: "Brain Vision", href: "https://brainvision.com", logo: "/images/collaborations/brainvision_logo.jfif" },
+      { name: "Entrepreneurship Department", href: "https://entrepreneurship.ncsu.edu", logo: "/images/collaborations/ncsu_logo.webp" },
+    ],
   },
   {
     id: "spring-hackathon",
     title: "Spring Hackathon",
-    summary: "Our annual spring hackathon, held in partnership with g.tec.",
+    summary: "BR41N.IO Hackathon in collaboration with g.tec Medical Engineering and Neuropawn",
     status: "Past",
     past: true,
     month: "Apr 2026",
     day: "25–26",
     when: "April 25–26, 2026",
-    who: "NC State students",
-    image: "/images/about/girls.webp",
+    who: "5 teams, 47 participants",
+    where: "NC State campus",
+    image: "/images/spring-hackathon/lecture1.webp",
     about:
-      "We hosted a hackathon in partnership with g.tec, a company known for biosignal recording and analysis tools used in research and education worldwide. The weekend put those ideas into practice at NC State with two days of building and learning.",
+      "The Spring School 2026 hackathon was a huge success! We saw a fantastic turnout from students eager to dive into brain-computer interfaces, with teams collaborating late into the night to design, build, and demo creative neurotech projects. Thank you to everyone who participated, mentored, and helped make this weekend possible, we can't wait to do it again!",
     rowNote: "In partnership with g.tec",
     schedule: [],
-    gallery: [],
+    gallery: [
+      { src: "/images/spring-hackathon/entrance.webp", alt: "Entrance to the spring hackathon" },
+      { src: "/images/spring-hackathon/lobby.webp", alt: "The hackathon lobby" },
+      { src: "/images/spring-hackathon/lecture1.webp", alt: "A lecture during the hackathon" },
+      { src: "/images/spring-hackathon/team1.webp", alt: "A team working during the hackathon" },
+      { src: "/images/spring-hackathon/team2.webp", alt: "A team working during the hackathon" },
+      { src: "/images/spring-hackathon/team3.webp", alt: "A team working during the hackathon" },
+      { src: "/images/spring-hackathon/team4.webp", alt: "A team working during the hackathon" },
+      { src: "/images/spring-hackathon/1stplace.webp", alt: "First place team" },
+      { src: "/images/spring-hackathon/2ndplace.webp", alt: "Second place team" },
+      { src: "/images/spring-hackathon/3rdplace.webp", alt: "Third place team" },
+    ],
+    stats: [
+      { label: "Attendees", value: "42", note: "Students from 3 universities" },
+      { label: "Teams", value: "5", note: "Built over two days" },
+      { label: "Total prizes", value: "$4000"}
+    ],
+    sponsors: [
+      { name: "g.tec", href: "https://www.gtec.at/", logo: "/images/collaborations/g-tec-logo.svg" },
+      { name: "NeuroPawn", href: "https://www.neuropawn.tech/", logo: "/images/collaborations/neuropawn-logo.png" },
+      { name: "Entrepreneurship Department", href: "https://entrepreneurship.ncsu.edu", logo: "/images/collaborations/ncsu_logo.webp" },
+      { name: "Hilltop Home", href: "https://hilltophome.org", logo: "/images/collaborations/hilltop-logo.webp" },
+    ],
   },
   {
     id: "card-making",

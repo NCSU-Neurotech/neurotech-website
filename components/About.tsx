@@ -4,9 +4,9 @@ import type { Person } from "../data";
 import { PageHead, Photo } from "./parts";
 
 const pillars = [
-  { n: "01", t: "Build", d: "Hands-on projects designed and prototyped by student teams.", img: "/images/about/girls.webp", alt: "Members assembling an EEG headset" },
-  { n: "02", t: "Educate", d: "Hackathons, workshops and talks open to students from every major.", img: "/images/ant-visit/eeg-headset-demo.jpg", alt: "EEG headset demo during the ANT Neuro visit" },
-  { n: "03", t: "Serve", d: "Service events that put our skills to work for the community.", img: "" },
+  { n: "01", t: "Build", d: "Hands-on projects designed and prototyped by student teams.", img: "/images/neuropic/build.webp", alt: "Members building a project" },
+  { n: "02", t: "Educate", d: "Hackathons, workshops and talks open to students from every major.", img: "/images/ant-visit/eeg-output-demo.jpg", alt: "Live EEG output during the ANT Neuro visit" },
+  { n: "03", t: "Serve", d: "Service events that put our skills to work for the community.", img: "/images/neuropic/armaan_card_giving.webp", alt: "A member giving out a card at a service event", pos: "center 8%" },
 ];
 
 export function Mission() {
@@ -22,7 +22,7 @@ export function Mission() {
           <div className="pillars" style={{ paddingTop: 0 }}>
             {pillars.map((p) => (
               <div className="pillar" key={p.n}>
-                <Photo src={p.img} alt={p.alt} height={220} />
+                <Photo src={p.img} alt={p.alt} height={320} position={p.pos} />
                 <span className="num">{p.n}</span>
                 <h2>{p.t}</h2>
                 <p>{p.d}</p>
@@ -97,33 +97,24 @@ export function Collaborators() {
       <PageHead section="About Us" sectionTo="mission" title="Collaborators" lead="The companies, partners and community groups we work with." />
       <section>
         <div className="wrap" style={{ paddingTop: 80, paddingBottom: 96 }}>
-          <div>
-            {collaborators.map((c) => (
-              <div className="row" key={c.name}>
-                {c.href ? (
-                  <>
-                    <a className="logo-cell" href={c.href} target="_blank" rel="noopener noreferrer" aria-label={`${c.name} website`} tabIndex={-1}>
-                      <img src={c.logo} alt={`${c.name} logo`} />
-                    </a>
-                    <span className="nm"><a className="nm-link" href={c.href} target="_blank" rel="noopener noreferrer">{c.name}</a></span>
-                  </>
-                ) : (
-                  <>
-                    <div className="logo-cell"><span className="eyebrow">Logo</span></div>
-                    <span className="nm">{c.name}</span>
-                  </>
-                )}
-                <span className="kind">{c.kind}</span>
-                <span className="note">{c.note}</span>
-              </div>
-            ))}
+          <div className="collab-grid">
+            {collaborators.map((c) => {
+              const body = (
+                <>
+                  <div className="logo-hero">
+                    {c.logo ? <img src={c.logo} alt={`${c.name} logo`} /> : <span className="eyebrow">Logo</span>}
+                  </div>
+                  <span className="nm">{c.name}</span>
+                  <span className="kind">{c.kind}</span>
+                </>
+              );
+              return c.href ? (
+                <a className="collab-card" key={c.name} href={c.href} target="_blank" rel="noopener noreferrer">{body}</a>
+              ) : (
+                <div className="collab-card" key={c.name}>{body}</div>
+              );
+            })}
           </div>
-        </div>
-      </section>
-      <section className="sr">
-        <div className="wrap sec-pad photo-row">
-          <Photo src="/images/ant-visit/eeg-headset-demo.jpg" alt="EEG headset demo during the ANT Neuro visit" height={360} flex="1 1 320px" />
-          <Photo src="/images/ant-visit/eeg-output-demo.jpg" alt="EEG output on screen during the ANT Neuro visit" height={360} flex="1 1 320px" />
         </div>
       </section>
       <section className="on-dark">

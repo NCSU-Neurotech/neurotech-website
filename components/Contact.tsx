@@ -54,7 +54,7 @@ export function Contact() {
                 <form onSubmit={send}>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 28 }}>
                     <div className="field"><label htmlFor="c-name">Name</label><input id="c-name" name="name" className="fld" type="text" placeholder="Your name" required /></div>
-                    <div className="field"><label htmlFor="c-email">Email</label><input id="c-email" name="email" className="fld" type="email" placeholder="you@ncsu.edu" required /></div>
+                    <div className="field"><label htmlFor="c-email">Email</label><input id="c-email" name="email" className="fld" type="email" placeholder="you@email.com" required /></div>
                   </div>
                   <div className="field">
                     <label htmlFor="c-topic">Topic</label>
@@ -90,7 +90,7 @@ export function Contact() {
             <h2>Join the mailing list</h2>
             <p>Meeting reminders, announcements, and more!</p>
           </div>
-          <a className="btn-r" href={mailingListHref}>Join the Mailing List <IconUpRight /></a>
+          <a className="btn-r" href={mailingListHref} target="_blank" rel="noopener noreferrer">Join the Mailing List <IconUpRight /></a>
         </div>
       </section>
     </>

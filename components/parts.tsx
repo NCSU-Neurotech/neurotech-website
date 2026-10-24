@@ -131,7 +131,7 @@ export function Header({ current }: { current: string }) {
     <header className="hdr on-dark">
       <div className="wrap hdr-in">
         <Link to="home" className="brand" onClick={close}>
-          <img src="/images/logo/logo.webp" alt="Neurotech at NC State logo" />
+          <img src="/images/logo/logo_header.png" alt="Neurotech at NC State logo" />
           <span>Neurotech <span>at NC State</span></span>
         </Link>
         <nav className="nav-d" aria-label="Primary">
@@ -199,7 +199,7 @@ export function Footer() {
           </div>
         </nav>
         <div className="ftr-base">
-          <span><img src="/images/logo/logo.webp" alt="" />Neurotech at NC State</span>
+          <span><img src="/images/logo/logo_header.png" alt="" />Neurotech at NC State</span>
           <span>© 2026. All rights reserved.</span>
         </div>
       </div>
